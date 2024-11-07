@@ -105,10 +105,7 @@ print(selected)
 print("===================================================")
 print(others)
 
-
 # Function two
-import random
-
 def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     selected_data = pokedex_data.get(selected_pokemon.lower())
     opponent_data = pokedex_data.get(opponent_pokemon.lower())
