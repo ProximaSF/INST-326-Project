@@ -97,8 +97,8 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     with open("pokedex.json", 'r', encoding='utf-8') as file:
         pokedex_data = json.load(file)
 
-    print(selected_pokemon)
-    print(opponent_pokemon)
+    #print(selected_pokemon)
+    #print(opponent_pokemon)
 
     selected_data = pokedex_data.get(selected_pokemon)
     opponent_data = pokedex_data.get(opponent_pokemon)
@@ -149,7 +149,6 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     # Calculate win rate
     win_rate = selected_wins / num_simulations
     return win_rate, selected_wins, opponent_wins
-
 
 # Tracks results against several pokemon
 def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
@@ -323,7 +322,7 @@ def main(selected_pokemon, num_opponents):
 
     with open("result.txt", 'w', encoding="utf-8") as file:
         file.write(msg)
-    print(f"{"↔↔↔↔↔↔" * 10}\nCreated/updated result.txt\n\n")
+    print(f"{line_break}\nCreated/updated result.txt\n\n")
 
 
 def parse_args(arglist):
@@ -337,5 +336,5 @@ if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
     main(args.selected_pokemon, args.number_opponents)
 
-    # Use ↓ in the console:
+    # Example in the console ↓ (windows):
     # python .\main.py "pikachu" 53
