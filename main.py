@@ -314,7 +314,6 @@ def parse_args(arglist):
     parser.add_argument("number_opponents", help="The number of unique Pokemons to simulate")
     return parser.parse_args(arglist)
 
-
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
     main(args.selected_pokemon, args.number_opponents)
