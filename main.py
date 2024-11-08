@@ -285,14 +285,14 @@ def main(selected_pokemon, num_opponents):
     selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info(selected_pokemon, num_opponents, johto_pokemons)
     battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex)
 
-    line_break = "↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔\n"
+    line_break = "↔↔↔↔↔↔"*20
     print(selected_pokemon_pokedex)
     print(line_break)
     print(opponent_pokemons_pokedex)
     print(line_break)
     print(f"Pokmons used in battles: {[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}")
     print(line_break)
-    print(f"{num_opponents} different Pokemons will fight {selected_pokemon.capitalize()} one at a time\n\n")
+    print(f"{num_opponents} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
     print(line_break)
     print(battle_results)
 
@@ -306,6 +306,7 @@ def main(selected_pokemon, num_opponents):
                    f"{num_opponents} different Pokemons will fight {selected_pokemon.capitalize()} one at a time\n"
                    f"{line_break}"
                    f"{battle_results}")
+    print(f"{"↔↔↔↔↔↔"*10}\nCreated/updated result.txt\n\n")
 
 def parse_args(arglist):
     parser = ArgumentParser()
