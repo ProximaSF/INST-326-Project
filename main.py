@@ -202,7 +202,36 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
         print(f"Most effective type against {selected_pokemon} is {most_effective_type}. Earned a score of {types_score[most_effective_type]})")
 
     return battle_results, mean_win_rate, types_score
+
 # Function three
+type_advantage = {
+    "fire": {"grass": 2, "water": 0.5, "fire": 1},
+    "water": {"fire": 2, "electric": 0.5, "water": 1},
+    "grass": {"water": 2, "fire": 0.5, "grass": 1},
+    # Add additional types as needed
+}
+
+def calculate_damage(attacker, defender):
+    """
+    Calculates damage output in a turn-based battle between two Pokemon based on type effectiveness and defense.
+
+    Parameters:
+    - attacker (dict): Dictionary with 'basic_attack', 'types', and 'moves' for the attacking Pokemon.
+    - defender (dict): Dictionary with 'defense' and 'types' for the defending Pokemon.
+
+    Returns:
+    - float: The damage dealt to the defender.
+    """
+    attacker_attack = attacker["basic_attack"]
+    defender_defense = defender["defense"]
+    attacker_type = attacker["types"][0] if attacker["types"] else "normal"
+    defender_type = defender["types"][0] if defender["types"] else "normal"
+    
+    # effectiveness multiplier is based on matchup type
+    effectiveness = type_advantage.get(attacker_type, {}).get(defender_type, 1)
+    
+    damage = (attacker_attack - defender_defense / 2) * effectiveness
+    return max(damage, 0)  # Prevents negative damage
 
 # Function Four
 
