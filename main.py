@@ -44,6 +44,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
             johto_pokemon_list = [pokemon["pokemon_species"]["name"] for pokemon in johto_data["pokemon_entries"]]
             #pokemon = random.choice(johto_pokemon_list)
             #print(f"chose: {pokemon}")
+            #print(len(johto_pokemon_list))
             return johto_pokemon_list
 
     selected_pokedex_data = {}
@@ -63,7 +64,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
             }
         return selected_pokedex_data
 
-    def pokedex_dict():
+    def opponent_pokedex_dict():
         other_pokemons = {}
         pokemon_names = johto_pokemons()
         for i in range(num_pokemon):
@@ -94,16 +95,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
             json.dump(pokedex_data, write_file, indent=2)
         return other_pokemons
 
-    return selected_pokemon_dict(), pokedex_dict()
-
-selected_pokemon = "pikachu"
-num_pokemon = random.randrange(54, 180, step=18)
-print(f"{num_pokemon} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
-
-selected, others = get_pokemon_info(selected_pokemon, num_pokemon)
-print(selected)
-print("==================================================================")
-print(others)
+    return selected_pokemon_dict(), opponent_pokedex_dict()
 
 # Function two
 def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
@@ -255,3 +247,14 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, num_sim
     print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
     return win_probability
 # Function Five
+
+if __name__ == "__main__":
+    selected_pokemon = "pikachu"
+    num_pokemon = random.randrange(54, 180, step=18)
+    print(f"{num_pokemon} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
+
+    selected_pokemon, opponent_pokemons = get_pokemon_info(selected_pokemon, num_pokemon)
+    print(selected_pokemon)
+    print("===========================================================================================")
+    print(opponent_pokemons)
+    print(f"\nPoekmons chosed: {[pokemon.capitalize() for pokemon in opponent_pokemons]}")

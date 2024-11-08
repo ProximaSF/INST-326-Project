@@ -2,6 +2,13 @@ import requests
 import json
 import random
 
+'''print("Jay was here ☺")
+print("Ismail says hi")
+print("Griffin says hey")
+print("Wuilmer was here.")
+print("John is late, but here")'''
+
+
 # Function one
 def get_pokemon_info(selected_pokemon, num_pokemon):
     try:
@@ -39,6 +46,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
             johto_pokemon_list = [pokemon["pokemon_species"]["name"] for pokemon in johto_data["pokemon_entries"]]
             # pokemon = random.choice(johto_pokemon_list)
             # print(f"chose: {pokemon}")
+            # print(len(johto_pokemon_list))
             return johto_pokemon_list
 
     selected_pokedex_data = {}
@@ -59,7 +67,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
             }
         return selected_pokedex_data
 
-    def pokedex_dict():
+    def opponent_pokedex_dict():
         other_pokemons = {}
         pokemon_names = johto_pokemons()
         for i in range(num_pokemon):
@@ -90,17 +98,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
             json.dump(pokedex_data, write_file, indent=2)
         return other_pokemons
 
-    return selected_pokemon_dict(), pokedex_dict()
-
-
-selected_pokemon = "pikachu"
-num_pokemon = random.randrange(54, 180, step=18)
-print(f"{num_pokemon} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
-
-selected, others = get_pokemon_info(selected_pokemon, num_pokemon)
-print(selected)
-print("==================================================================")
-print(others)
+    return selected_pokemon_dict(), opponent_pokedex_dict()
 
 
 # Function two
@@ -202,8 +200,74 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
             f"Most effective type against {selected_pokemon} is {most_effective_type}. Earned a score of {types_score[most_effective_type]})")
 
     return battle_results, mean_win_rate, types_score
+
+
 # Function three
+type_advantage = {
+    "fire": {"grass": 2, "water": 0.5, "fire": 1},
+    "water": {"fire": 2, "electric": 0.5, "water": 1},
+    "grass": {"water": 2, "fire": 0.5, "grass": 1},
+    # Add additional types as needed
+}
+
+
+def calculate_damage(attacker, defender):
+    """
+    Calculates damage output in a turn-based battle between two Pokemon based on type effectiveness and defense.
+
+    Parameters:
+    - attacker (dict): Dictionary with 'basic_attack', 'types', and 'moves' for the attacking Pokemon.
+    - defender (dict): Dictionary with 'defense' and 'types' for the defending Pokemon.
+
+    Returns:
+    - float: The damage dealt to the defender.
+    """
+    attacker_attack = attacker["basic_attack"]
+    defender_defense = defender["defense"]
+    attacker_type = attacker["types"][0] if attacker["types"] else "normal"
+    defender_type = defender["types"][0] if defender["types"] else "normal"
+
+    # effectiveness multiplier is based on matchup type
+    effectiveness = type_advantage.get(attacker_type, {}).get(defender_type, 1)
+
+    damage = (attacker_attack - defender_defense / 2) * effectiveness
+    return max(damage, 0)  # Prevents negative damage
+
 
 # Function Four
+def probability_calculation(selected_data, opponent_data):
+    hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
+    attack_prob = selected_data["basic_attack"] / (selected_data["basic_attack"] + opponent_data["basic_attack"])
+    defense_prob = selected_data["defense"] / (selected_data["defense"] + opponent_data["defense"])
+
+    combined_prob = (hp_prob + attack_prob + defense_prob) / 3
+    return combined_prob
+
+
+def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, num_simulations=100):
+    selected_data = pokedex_data.get(selected_pokemon.lower())
+    opponent_data = pokedex_data.get(opponent_pokemon.lower())
+    if not selected_data or not opponent_data:
+        raise ValueError(f"Data missing for {selected_data} or {opponent_data}")
+    combined_prob = probability_calculation(selected_data, opponent_data)
+    win_count = 0
+    for _ in range(num_simulations):
+        if random.uniform(0, 1) < combined_prob:
+            win_count += 1
+    win_probability = win_count / num_simulations
+    print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
+    return win_probability
+
 
 # Function Five
+
+if __name__ == "__main__":
+    selected_pokemon = "pikachu"
+    num_pokemon = random.randrange(54, 180, step=18)
+    print(f"{num_pokemon} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
+
+    selected_pokemon, opponent_pokemons = get_pokemon_info(selected_pokemon, num_pokemon)
+    print(selected_pokemon)
+    print("===========================================================================================")
+    print(opponent_pokemons)
+    print(f"\nPoekmons chosed: {[pokemon.capitalize() for pokemon in opponent_pokemons]}")
