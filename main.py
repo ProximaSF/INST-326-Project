@@ -13,6 +13,7 @@ print("John is late, but here")'''
 # Function one
 
 def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
+
     try:
         with open("pokedex.json", "r", encoding="utf-8") as read_file:
             pokedex_data = json.load(read_file)
@@ -270,6 +271,8 @@ def main(selected_pokemon, num_opponents):
     print(f"Pokmons used in battles: {[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}")
     print(f"↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔")
     print(f"{num_opponents} different Pokemons will fight {selected_pokemon.capitalize()} one at a time\n\n")
+
+
 
 def parse_args(arglist):
     parser = ArgumentParser()
