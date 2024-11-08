@@ -1,6 +1,8 @@
 import requests
 import json
 import random
+import sys
+from argparse import ArgumentParser
 
 '''print("Jay was here ☺")
 print("Ismail says hi")
@@ -9,7 +11,8 @@ print("Wuilmer was here.")
 print("John is late, but here")'''
 
 # Function one
-def get_pokemon_info(selected_pokemon, num_pokemon):
+
+def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
     try:
         with open("pokedex.json", "r", encoding="utf-8") as read_file:
             pokedex_data = json.load(read_file)
@@ -36,17 +39,6 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
                     pass
         return valid_moves_list
 
-    def johto_pokemons():
-        pokemon_johto_generations_url = "https://pokeapi.co/api/v2/pokedex/3/"
-        response = requests.get(pokemon_johto_generations_url)
-        if response.status_code == 200:
-            johto_data = response.json()
-            johto_pokemon_list = [pokemon["pokemon_species"]["name"] for pokemon in johto_data["pokemon_entries"]]
-            #pokemon = random.choice(johto_pokemon_list)
-            #print(f"chose: {pokemon}")
-            #print(len(johto_pokemon_list))
-            return johto_pokemon_list
-
     selected_pokedex_data = {}
     def selected_pokemon_dict():
         url = f"https://pokeapi.co/api/v2/pokemon/{selected_pokemon.lower()}"
@@ -66,7 +58,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
 
     def opponent_pokedex_dict():
         other_pokemons = {}
-        pokemon_names = johto_pokemons()
+        pokemon_names = johto_pokemons
         for i in range(num_pokemon):
             picked_pokemon_name = random.choice(pokemon_names)
             pokemon_names.remove(picked_pokemon_name)
@@ -248,13 +240,50 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, num_sim
     return win_probability
 # Function Five
 
-if __name__ == "__main__":
-    selected_pokemon = "pikachu"
-    num_pokemon = random.randrange(54, 180, step=18)
-    print(f"{num_pokemon} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
 
-    selected_pokemon, opponent_pokemons = get_pokemon_info(selected_pokemon, num_pokemon)
-    print(selected_pokemon)
+def main(selected_pokemon, num_opponents):
+    def johto_pokemons():
+        pokemon_johto_generations_url = "https://pokeapi.co/api/v2/pokedex/3/"
+        response = requests.get(pokemon_johto_generations_url)
+        if response.status_code == 200:
+            johto_data = response.json()
+            johto_pokemon_list = [pokemon["pokemon_species"]["name"] for pokemon in johto_data["pokemon_entries"]]
+            return johto_pokemon_list
+
+    johto_pokemons = johto_pokemons()
+    if selected_pokemon not in johto_pokemons:
+        print(f"{selected_pokemon} is not a Pokemon, check the spelling")
+        return
+
+    if int(num_opponents) <= 54:
+        num_opponents = 54
+    num_opponents = (num_opponents // 18) * 18
+
+    # selected_pokemon = "pikachu"
+    # num_opponents = random.randrange(54, 180, step=18)
+
+    selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info(selected_pokemon, num_opponents, johto_pokemons)
+    print(selected_pokemon_pokedex)
     print("===========================================================================================")
-    print(opponent_pokemons)
-    print(f"\nPoekmons chosed: {[pokemon.capitalize() for pokemon in opponent_pokemons]}")
+    print(opponent_pokemons_pokedex)
+    print(f"\nPokmons used in battles: {[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}")
+    print(f"{num_opponents} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
+
+    return selected_pokemon_pokedex, opponent_pokemons_pokedex
+
+
+def parse_args(arglist):
+    parser = ArgumentParser()
+    parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
+    parser.add_argument("number_opponents", help="The number of unique Pokemons to simulate")
+    return parser.parse_args(arglist)
+
+
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    main(args.selected_pokemon, args.number_opponents)
+
+    # Use ↓ in the console:
+    # python .\main.py "pikachu" 53
+
+
