@@ -234,5 +234,24 @@ def calculate_damage(attacker, defender):
     return max(damage, 0)  # Prevents negative damage
 
 # Function Four
+def probability_calculation(selected_data, opponent_data ):
+    hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
+    attack_prob = selected_data["basic_attack"] / (selected_data["basic_attack"] + opponent_data["basic_attack"])
+    defense_prob = selected_data["defense"] / (selected_data["defense"] + opponent_data["defense"])
 
+    combined_prob = (hp_prob + attack_prob + defense_prob) / 3
+    return combined_prob
+def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, num_simulations = 100):
+    selected_data = pokedex_data.get(selected_pokemon.lower())
+    opponent_data = pokedex_data.get(opponent_pokemon.lower())
+    if not selected_data or not opponent_data:
+        raise ValueError (f"Data missing for {selected_data} or {opponent_data}")
+    combined_prob = probability_calculation(selected_data, opponent_data)
+    win_count = 0 
+    for _ in range(num_simulations):
+        if random.uniform(0,1) < combined_prob:
+            win_count += 1
+    win_probability = win_count / num_simulations       
+    print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
+    return win_probability
 # Function Five
