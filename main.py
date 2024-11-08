@@ -94,66 +94,65 @@ def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
 
 
 # Function two
-def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
-    with open("pokedex.json", 'r', encoding='utf-8') as file:
-        pokedex_data = json.load(file)
-
-    print(selected_pokemon)
-    print(opponent_pokemon)
-
-    selected_data = pokedex_data.get(selected_pokemon)
-    opponent_data = pokedex_data.get(opponent_pokemon)
-    if not selected_data or not opponent_data:
-        print(f"Missing data for {selected_pokemon} or {opponent_pokemon}")
-        return None
-
-    # Stats for selected pokemon
-    selected_hp = selected_data["hp"]
-    selected_attack = selected_data["basic_attack"]
-    selected_defense = selected_data["defense"]
-    selected_moves = selected_data["moves"]
-
-    # Stats for opponents pokemon
-    opponent_hp = opponent_data["hp"]
-    opponent_attack = opponent_data["basic_attack"]
-    opponent_defense = opponent_data["defense"]
-    opponent_moves = opponent_data["moves"]
-
-    # Types for said pokemon
-    selected_type = selected_data["types"]
-    opponent_type = opponent_data["types"]
-
-    # Win Counter
-    selected_wins = 0
-    opponent_wins = 0
-    for _ in range(num_simulations):
-        selected_pokemon_hp = selected_hp
-        opponent_pokemon_hp = opponent_hp
-
-        # Start battle set
-        while selected_pokemon_hp > 0 and opponent_pokemon_hp > 0:
-
-            # Selected Pokémon attacks first
-            damage_to_opponent = selected_attack - (opponent_defense / 2)
-            opponent_pokemon_hp -= max(damage_to_opponent, 0)
-            if opponent_pokemon_hp <= 0:
-                selected_wins += 1
-                break
-
-            # Opponent Pokémon attacks
-            damage_to_selected = opponent_attack - (selected_defense / 2)
-            selected_pokemon_hp -= max(damage_to_selected, 0)
-            if selected_pokemon_hp <= 0:
-                opponent_wins += 1
-                break
-
-    # Calculate win rate
-    win_rate = selected_wins / num_simulations
-    return win_rate, selected_wins, opponent_wins
-
-
-# Tracks results against several pokemon
 def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
+    # Tracks results against several pokemon
+    def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
+        with open("pokedex.json", 'r', encoding='utf-8') as file:
+            pokedex_data = json.load(file)
+
+        print(selected_pokemon)
+        print(opponent_pokemon)
+
+        selected_data = pokedex_data.get(selected_pokemon)
+        opponent_data = pokedex_data.get(opponent_pokemon)
+        if not selected_data or not opponent_data:
+            print(f"Missing data for {selected_pokemon} or {opponent_pokemon}")
+            return None
+
+        # Stats for selected pokemon
+        selected_hp = selected_data["hp"]
+        selected_attack = selected_data["basic_attack"]
+        selected_defense = selected_data["defense"]
+        selected_moves = selected_data["moves"]
+
+        # Stats for opponents pokemon
+        opponent_hp = opponent_data["hp"]
+        opponent_attack = opponent_data["basic_attack"]
+        opponent_defense = opponent_data["defense"]
+        opponent_moves = opponent_data["moves"]
+
+        # Types for said pokemon
+        selected_type = selected_data["types"]
+        opponent_type = opponent_data["types"]
+
+        # Win Counter
+        selected_wins = 0
+        opponent_wins = 0
+        for _ in range(num_simulations):
+            selected_pokemon_hp = selected_hp
+            opponent_pokemon_hp = opponent_hp
+
+            # Start battle set
+            while selected_pokemon_hp > 0 and opponent_pokemon_hp > 0:
+
+                # Selected Pokémon attacks first
+                damage_to_opponent = selected_attack - (opponent_defense / 2)
+                opponent_pokemon_hp -= max(damage_to_opponent, 0)
+                if opponent_pokemon_hp <= 0:
+                    selected_wins += 1
+                    break
+
+                # Opponent Pokémon attacks
+                damage_to_selected = opponent_attack - (selected_defense / 2)
+                selected_pokemon_hp -= max(damage_to_selected, 0)
+                if selected_pokemon_hp <= 0:
+                    opponent_wins += 1
+                    break
+
+        # Calculate win rate
+        win_rate = selected_wins / num_simulations
+        return win_rate, selected_wins, opponent_wins
+
     types_score = {}
     win_count = 0
     total_battles = 0
