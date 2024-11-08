@@ -249,7 +249,7 @@ def calculate_damage(attacker, defender):
 
 
 # Function Four
-def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, num_simulations=100):
+def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex_data, num_simulations=100):
     def probability_calculation(selected_data, opponent_data):
         hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
         attack_prob = selected_data["basic_attack"] / (selected_data["basic_attack"] + opponent_data["basic_attack"])
