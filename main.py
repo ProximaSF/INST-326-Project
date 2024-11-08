@@ -264,20 +264,18 @@ def main(selected_pokemon, num_opponents):
 
     selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info(selected_pokemon, num_opponents, johto_pokemons)
     print(selected_pokemon_pokedex)
-    print("===========================================================================================")
+    print("↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔")
     print(opponent_pokemons_pokedex)
-    print(f"\nPokmons used in battles: {[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}")
-    print(f"{num_opponents} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
-
-    return selected_pokemon_pokedex, opponent_pokemons_pokedex
-
+    print("↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔")
+    print(f"Pokmons used in battles: {[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}")
+    print(f"↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔↔")
+    print(f"{num_opponents} different Pokemons will fight {selected_pokemon.capitalize()} one at a time\n\n")
 
 def parse_args(arglist):
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
     parser.add_argument("number_opponents", help="The number of unique Pokemons to simulate")
     return parser.parse_args(arglist)
-
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
