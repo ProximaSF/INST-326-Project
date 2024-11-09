@@ -165,7 +165,7 @@ def damage(DBM_stats, types_info):
         pass
 
 
-    pick_basic_attack = random.random()
+    pick_basic_attack = random.random() # Maybe replace it with an energy system later on
     if pick_basic_attack >= 0.6:
         return calculate_damage(basic_attack, defence) or basic_attack/3
     if moves:
