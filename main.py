@@ -12,7 +12,6 @@ print("John is late, but here")'''
 
 
 # Function One
-# ----------------------------------------------------------------------------------------------------------
 from Functions.pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
 
 get_pokemon_info_instance = get_pokemon_info
@@ -36,19 +35,24 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
 
     # Stats for selected pokemon
     selected_hp = selected_data["hp"]
-    selected_attack = selected_data["basic_attack"]
     selected_defense = selected_data["defense"]
+    selected_attack = selected_data["basic_attack"]
     selected_moves = selected_data["moves"]
+
 
     # Stats for opponents pokemon
     opponent_hp = opponent_data["hp"]
+    opponent_defense = selected_data["defense"]
     opponent_attack = opponent_data["basic_attack"]
-    opponent_defense = opponent_data["defense"]
     opponent_moves = opponent_data["moves"]
 
-    # Types for said pokemon
-    selected_type = selected_data["types"]
-    opponent_type = opponent_data["types"]
+    # Selected combined status for defense, basic_attack and moves
+    selected_DBM_stats = (selected_defense, selected_attack, selected_moves)
+    # Selected combined status for defense, basic_attack and moves
+    opponent_DBM_stats = (opponent_defense, opponent_attack, opponent_moves)
+
+    # Type stats for both opponents
+    both_opponent_types = (selected_data["types"], opponent_data["types"])
 
     # Win Counter
     selected_wins = 0
@@ -61,15 +65,15 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
         while selected_pokemon_hp > 0 and opponent_pokemon_hp > 0:
 
             # Selected Pokémon attacks first
-            damage_to_opponent = selected_attack - (opponent_defense / 4)
-            opponent_pokemon_hp -= max(damage_to_opponent, 0)
+            damage_inflict = damage(selected_DBM_stats, both_opponent_types)
+            opponent_pokemon_hp -= damage_inflict
             if opponent_pokemon_hp <= 0:
                 selected_wins += 1
                 break
 
             # Opponent Pokémon attacks
-            damage_to_selected = opponent_attack - (selected_defense / 2)
-            selected_pokemon_hp -= max(damage_to_selected, 0)
+            damage_inflict = damage(opponent_DBM_stats, both_opponent_types)
+            selected_pokemon_hp -= damage_inflict
             if selected_pokemon_hp <= 0:
                 opponent_wins += 1
                 break
@@ -77,7 +81,6 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     # Calculate win rate
     win_rate = selected_wins / num_simulations
     return win_rate, selected_wins, opponent_wins
-
 
 # Tracks results against several pokemon
 def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
@@ -124,6 +127,7 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
         # print(f"Most effective type against {selected_pokemon} is {most_effective_type}. Earned a score of {types_score[most_effective_type]})")
 
     return battle_results, mean_win_rate, types_score
+# ----------------------------------------------------------------------------------------------------------
 
 
 # Function three
@@ -151,28 +155,26 @@ type_advantage = {  # Type advantages as of gen 6
     "fairy": {"fire": 0.5, "fighting": 2, "poison": 0.5, "dragon": 2, "dark": 2, "steel": 0.5}
 }
 
+def damage(DBM_stats, types_info):
+    defence = DBM_stats[0]
+    basic_attack = DBM_stats[1]
+    moves = DBM_stats[2]
 
-def calculate_damage(attacker, defender):
-    """
-    Calculates damage output in a turn-based battle between two Pokemon based on type effectiveness and defense.
+    # Calculate dmg based on type match up and defense
+    def calculate_damage(attack, defence):
+        pass
 
-    Parameters:
-    - attacker (dict): Dictionary with 'basic_attack', 'types', and 'moves' for the attacking Pokemon.
-    - defender (dict): Dictionary with 'defense' and 'types' for the defending Pokemon.
 
-    Returns:
-    - float: The damage dealt to the defender.
-    """
-    attacker_attack = attacker["basic_attack"]
-    defender_defense = defender["defense"]
-    attacker_type = attacker["types"][0] if attacker["types"] else "normal"
-    defender_type = defender["types"][0] if defender["types"] else "normal"
-
-    # effectiveness multiplier is based on matchup type
-    effectiveness = type_advantage.get(attacker_type, {}).get(defender_type, 1)
-
-    damage = (attacker_attack - defender_defense / 2) * effectiveness
-    return max(damage, 0)  # Prevents negative damage
+    pick_basic_attack = random.random()
+    if pick_basic_attack >= 0.6:
+        return calculate_damage(basic_attack, defence) or basic_attack/3
+    if moves:
+        move_type = random.choice(moves)
+        move_damage = next(iter(move_type.values()))  # get the first value in iteration
+        return calculate_damage(move_damage, defence) or move_damage/3
+    else:
+        return 0
+# ----------------------------------------------------------------------------------------------------------
 
 
 # Function Four
@@ -197,6 +199,7 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex
     win_probability = win_count / num_simulations
     print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
     return win_probability
+# ----------------------------------------------------------------------------------------------------------
 
 
 # Function Five
@@ -226,15 +229,15 @@ def main(selected_pokemon, num_opponents):
     line_break = "↔↔↔↔↔↔" * 18
     msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"
            f"{line_break}\n"
+           f"Selected Pokemon Info: \n{selected_pokemon_pokedex}\n\n"
+           f"{line_break}\n"
            f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
+           f"{line_break}\n"
+           f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
            f"{line_break}\n"
            f"Pokmons used in battles: \n{[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}\n\n"
            f"{line_break}\n"
-           f"Selected Pokemon Info: \n{selected_pokemon_pokedex}\n\n"
-           f"{line_break}\n"
            f"All Pokemon Opponent Info: \n{opponent_pokemons_pokedex}\n\n"
-           f"{line_break}\n"
-           f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
            f"{line_break}\n"
            f"First Simulation Result: \n{battle_results}\n\n")
     # print(msg)
@@ -243,13 +246,11 @@ def main(selected_pokemon, num_opponents):
         file.write(msg)
     print(f"Created/updated result.txt\n{line_break}\n")
 
-
 def parse_args(arglist):
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
     parser.add_argument("number_opponents", help="The number of unique Pokemons to simulate")
     return parser.parse_args(arglist)
-
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
