@@ -1,6 +1,8 @@
 import requests
 import json
 import random
+import sys
+from argparse import ArgumentParser
 
 '''print("Jay was here ☺")
 print("Ismail says hi")
@@ -10,7 +12,7 @@ print("John is late, but here")'''
 
 
 # Function one
-def get_pokemon_info(selected_pokemon, num_pokemon):
+def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
     try:
         with open("pokedex.json", "r", encoding="utf-8") as read_file:
             pokedex_data = json.load(read_file)
@@ -38,17 +40,6 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
                     pass
         return valid_moves_list
 
-    def johto_pokemons():
-        pokemon_johto_generations_url = "https://pokeapi.co/api/v2/pokedex/3/"
-        response = requests.get(pokemon_johto_generations_url)
-        if response.status_code == 200:
-            johto_data = response.json()
-            johto_pokemon_list = [pokemon["pokemon_species"]["name"] for pokemon in johto_data["pokemon_entries"]]
-            # pokemon = random.choice(johto_pokemon_list)
-            # print(f"chose: {pokemon}")
-            # print(len(johto_pokemon_list))
-            return johto_pokemon_list
-
     selected_pokedex_data = {}
 
     def selected_pokemon_dict():
@@ -69,7 +60,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
 
     def opponent_pokedex_dict():
         other_pokemons = {}
-        pokemon_names = johto_pokemons()
+        pokemon_names = johto_pokemons
         for i in range(num_pokemon):
             picked_pokemon_name = random.choice(pokemon_names)
             pokemon_names.remove(picked_pokemon_name)
@@ -103,8 +94,14 @@ def get_pokemon_info(selected_pokemon, num_pokemon):
 
 # Function two
 def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
-    selected_data = pokedex_data.get(selected_pokemon.lower())
-    opponent_data = pokedex_data.get(opponent_pokemon.lower())
+    with open("pokedex.json", 'r', encoding='utf-8') as file:
+        pokedex_data = json.load(file)
+
+    #print(selected_pokemon)
+    #print(opponent_pokemon)
+
+    selected_data = pokedex_data.get(selected_pokemon)
+    opponent_data = pokedex_data.get(opponent_pokemon)
     if not selected_data or not opponent_data:
         print(f"Missing data for {selected_pokemon} or {opponent_pokemon}")
         return None
@@ -153,7 +150,6 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     win_rate = selected_wins / num_simulations
     return win_rate, selected_wins, opponent_wins
 
-
 # Tracks results against several pokemon
 def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
     types_score = {}
@@ -177,7 +173,7 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
         if selected_wins < opponent_wins:
 
             # If the selected Pokemon lost, update the types_score
-            opponent_data = pokedex_data.get(opponent.lower())
+            opponent_data = all_opponents.get(opponent)
             if opponent_data:
                 for opponent_type in opponent_data["types"]:
                     if opponent_type not in types_score:
@@ -203,11 +199,28 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
 
 
 # Function three
-type_advantage = {
-    "fire": {"grass": 2, "water": 0.5, "fire": 1},
-    "water": {"fire": 2, "electric": 0.5, "water": 1},
-    "grass": {"water": 2, "fire": 0.5, "grass": 1},
-    # Add additional types as needed
+type_advantage = { #Type advantages as of gen 6
+    "fire": {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 2, "bug": 2, "rock": 0.5, "dragon": 0.5, "steel": 2},
+    "water": {"fire": 2, "water": 0.5, "grass": 0.5, "ground": 2, "rock": 2, "dragon": 0.5},
+    "grass": {"fire": 0.5, "water": 2, "grass": 0.5, "poison": 0.5, "ground": 2, "flying": 0.5, "bug": 0.5,
+              "rock": 2, "dragon": 0.5, "steel": 0.5},
+    "normal": {"rock": 0.5, "ghost": 0, "steel": 0.5},
+    "electric": {"water": 2, "grass": 0.5, "electric": 0.5, "ground": 0, "flying": 2, "dragon": 0.5},
+    "ice": {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 0.5, "ground": 2, "flying": 2, "steel": 0.5},
+    "fighting": {"normal": 2, "ice": 2, "poison": 0.5, "flying": 0.5, "psychic": 0.5, "bug": 0.5, "rock": 2,
+                 "ghost": 0, "dark": 2, "steel": 2, "fairy": 0.5},
+    "poison": {"grass": 2, "poison": 0.5, "ground": 0.5, "rock": 0.5, "ghost": 0.5, "steel": 0, "fairy": 2},
+    "ground": {"fire": 2, "grass": 0.5, "electric": 2, "poison": 2, "flying": 0, "bug": 0.5, "rock": 2, "steel": 2},
+    "flying": {"grass": 2, "electric": 0.5, "fighting": 2, "bug": 2, "rock": 0.5, "steel": 0.5},
+    "psychic": {"fighting": 2, "poison": 2, "psychic": 0.5, "dark": 0, "steel": 0.5},
+    "bug": {"fire": 0.5, "grass": 2, "fighting": 0.5, "poison": 0.5, "flying": 0.5, "psychic": 2, "ghost": 0.5,
+            "dark": 2, "steel": 0.5, "fairy": 0.5},
+    "rock": {"fire": 2, "ice": 2, "fighting": 0.5, "ground": 0.5, "flying": 2, "bug": 2, "steel": 0.5},
+    "ghost": {"normal": 0, "psychic": 2, "ghost": 2, "dark": 0.5},
+    "dragon": {"dragon": 2, "steel": 0.5, "fairy": 0},
+    "dark": {"fighting": 0.5, "psychic": 2, "ghost": 2, "dark": 0.5, "fairy": 0.5},
+    "steel": {"fire": 0.5, "water": 0.5, "ice": 0.5, "fighting": 2, "rock": 2, "steel": 0.5, "fairy": 2},
+    "fairy": {"fire": 0.5, "fighting": 2, "poison": 0.5, "dragon": 2, "dark": 2, "steel": 0.5}
 }
 
 
@@ -235,16 +248,15 @@ def calculate_damage(attacker, defender):
 
 
 # Function Four
-def probability_calculation(selected_data, opponent_data):
-    hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
-    attack_prob = selected_data["basic_attack"] / (selected_data["basic_attack"] + opponent_data["basic_attack"])
-    defense_prob = selected_data["defense"] / (selected_data["defense"] + opponent_data["defense"])
+def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex_data, num_simulations=100):
+    def probability_calculation(selected_data, opponent_data):
+        hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
+        attack_prob = selected_data["basic_attack"] / (selected_data["basic_attack"] + opponent_data["basic_attack"])
+        defense_prob = selected_data["defense"] / (selected_data["defense"] + opponent_data["defense"])
 
-    combined_prob = (hp_prob + attack_prob + defense_prob) / 3
-    return combined_prob
+        combined_prob = (hp_prob + attack_prob + defense_prob) / 3
+        return combined_prob
 
-
-def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, num_simulations=100):
     selected_data = pokedex_data.get(selected_pokemon.lower())
     opponent_data = pokedex_data.get(opponent_pokemon.lower())
     if not selected_data or not opponent_data:
@@ -261,13 +273,68 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, num_sim
 
 # Function Five
 
-if __name__ == "__main__":
-    selected_pokemon = "pikachu"
-    num_pokemon = random.randrange(54, 180, step=18)
-    print(f"{num_pokemon} different Pokemons will fight {selected_pokemon.capitalize()} one at a time")
 
-    selected_pokemon, opponent_pokemons = get_pokemon_info(selected_pokemon, num_pokemon)
-    print(selected_pokemon)
-    print("===========================================================================================")
-    print(opponent_pokemons)
-    print(f"\nPoekmons chosed: {[pokemon.capitalize() for pokemon in opponent_pokemons]}")
+# Other Functions
+def main(selected_pokemon, num_opponents):
+    def johto_pokemons_and_types():
+        pokemon_list = None
+        pokemon_types_list = None
+        pokemon_urls = ["https://pokeapi.co/api/v2/pokedex/3/", "https://pokeapi.co/api/v2/type/"]
+        for link in pokemon_urls:
+            response = requests.get(link)
+            if response.status_code == 200:
+                data = response.json()
+                if "results" in data:
+                    pokemon_types_list = [type["name"] for type in data["results"]]
+                else:
+                    pokemon_list = [pokemon["pokemon_species"]["name"] for pokemon in data["pokemon_entries"]]
+        return pokemon_list, pokemon_types_list
+
+    pokemon_list, pokemon_types_list = johto_pokemons_and_types()
+    if selected_pokemon not in pokemon_list:
+        print(f"{selected_pokemon} is not a Pokemon, check the spelling")
+        return
+
+    if int(num_opponents) <= 54:
+        num_opponents = 54
+    num_opponents = (num_opponents // 18) * 18
+
+    # selected_pokemon = "pikachu"
+    # num_opponents = random.randrange(54, 180, step=18)
+
+    selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info(selected_pokemon, num_opponents,
+                                                                           pokemon_list)
+    battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex)
+
+    line_break = "↔↔↔↔↔↔" * 18
+    msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"
+           f"{line_break}\n"
+           f"Pokmons used in battles: \n{[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}\n\n"
+           f"{line_break}\n"
+           f"Selected Pokemon Info: \n{selected_pokemon_pokedex}\n\n"
+           f"{line_break}\n"
+           f"All Pokemon Opponent Info: \n{opponent_pokemons_pokedex}\n\n"
+           f"{line_break}\n"
+           f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
+           f"{line_break}\n"
+           f"First Simulation Result: \n{battle_results}\n\n")
+    print(msg)
+
+    with open("result.txt", 'w', encoding="utf-8") as file:
+        file.write(msg)
+    print(f"{line_break}\nCreated/updated result.txt\n\n")
+
+
+def parse_args(arglist):
+    parser = ArgumentParser()
+    parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
+    parser.add_argument("number_opponents", help="The number of unique Pokemons to simulate")
+    return parser.parse_args(arglist)
+
+
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    main(args.selected_pokemon, args.number_opponents)
+
+    # Example in the console ↓ (windows):
+    # python .\main.py "pikachu" 53
