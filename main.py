@@ -7,7 +7,7 @@ import sys
 from argparse import ArgumentParser
 from Functions.pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
 get_pokemon_info_instance = get_pokemon_info
-get_johto_pokemons_and_type_instance = johto_pokemons_and_types
+get_type_and_johto_pokemons_instance = johto_pokemons_and_types
 
 
 '''print("Jay was here ☺")
