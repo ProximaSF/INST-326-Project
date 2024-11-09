@@ -1,14 +1,7 @@
-import requests
 import json
 import random
 import sys
-
-# Imported Functions
 from argparse import ArgumentParser
-from Functions.pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
-get_pokemon_info_instance = get_pokemon_info
-get_type_and_johto_pokemons_instance = johto_pokemons_and_types
-
 
 '''print("Jay was here ☺")
 print("Ismail says hi")
@@ -17,13 +10,23 @@ print("Wuilmer was here.")
 print("John is late, but here")'''
 
 
+
+# Function One
+# ----------------------------------------------------------------------------------------------------------
+from Functions.pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
+
+get_pokemon_info_instance = get_pokemon_info
+get_type_and_johto_pokemons_instance = johto_pokemons_and_types
+# ----------------------------------------------------------------------------------------------------------
+
+
 # Function two
 def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     with open("pokedex.json", 'r', encoding='utf-8') as file:
         pokedex_data = json.load(file)
 
-    #print(selected_pokemon)
-    #print(opponent_pokemon)
+    # print(selected_pokemon)
+    # print(opponent_pokemon)
 
     selected_data = pokedex_data.get(selected_pokemon)
     opponent_data = pokedex_data.get(opponent_pokemon)
@@ -75,6 +78,7 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     win_rate = selected_wins / num_simulations
     return win_rate, selected_wins, opponent_wins
 
+
 # Tracks results against several pokemon
 def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
     types_score = {}
@@ -84,7 +88,7 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
 
     # Stats for battles
     for opponent in all_opponents:
-        #print(f"Simulating battles: {selected_pokemon} vs {opponent}")
+        # print(f"Simulating battles: {selected_pokemon} vs {opponent}")
         win_rate, selected_wins, opponent_wins = battle_simulation(selected_pokemon, opponent, num_simulations)
 
         battle_results.append({
@@ -104,7 +108,7 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
                     if opponent_type not in types_score:
                         types_score[opponent_type] = 0
                     types_score[opponent_type] += 1
-            #print(f"{selected_pokemon} lost to {opponent}. Type win tally updated.")
+            # print(f"{selected_pokemon} lost to {opponent}. Type win tally updated.")
 
         # Accumulate win rate and track total battles
         win_count += selected_wins
@@ -112,18 +116,18 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
 
     # Calculate the mean win rate
     mean_win_rate = win_count / total_battles
-    #print(f"\nThe simulation has finished for {selected_pokemon}. It's overall win rate was {mean_win_rate}")
+    # print(f"\nThe simulation has finished for {selected_pokemon}. It's overall win rate was {mean_win_rate}")
 
     # Determine which type is most effective (based on losses)
     if types_score:
         most_effective_type = max(types_score, key=types_score.get)
-        #print(f"Most effective type against {selected_pokemon} is {most_effective_type}. Earned a score of {types_score[most_effective_type]})")
+        # print(f"Most effective type against {selected_pokemon} is {most_effective_type}. Earned a score of {types_score[most_effective_type]})")
 
     return battle_results, mean_win_rate, types_score
 
 
 # Function three
-type_advantage = { #Type advantages as of gen 6
+type_advantage = {  # Type advantages as of gen 6
     "fire": {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 2, "bug": 2, "rock": 0.5, "dragon": 0.5, "steel": 2},
     "water": {"fire": 2, "water": 0.5, "grass": 0.5, "ground": 2, "rock": 2, "dragon": 0.5},
     "grass": {"fire": 0.5, "water": 2, "grass": 0.5, "poison": 0.5, "ground": 2, "flying": 0.5, "bug": 0.5,
@@ -200,10 +204,10 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex
 
 # Other Functions
 def main(selected_pokemon, num_opponents):
+    pokemon_list, pokemon_types_list = get_type_and_johto_pokemons_instance()
+    pokemon_list_copy = pokemon_list.copy()  # For msg use only to ensure 251 Pokemons for Johto region
 
-    pokemon_list, pokemon_types_list = get_johto_pokemons_and_type_instance()
-    pokemon_list_copy = pokemon_list.copy() # For msg use only to ensure 251 Pokemons for Johto region
-
+    selected_pokemon = selected_pokemon.lower()
     if selected_pokemon not in pokemon_list:
         print(f"{selected_pokemon} is not a Pokemon, check the spelling")
         return
@@ -216,7 +220,7 @@ def main(selected_pokemon, num_opponents):
     # num_opponents = random.randrange(54, 180, step=18)
 
     selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info_instance(selected_pokemon, num_opponents,
-                                                                           pokemon_list)
+                                                                                    pokemon_list)
     battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex)
 
     line_break = "↔↔↔↔↔↔" * 18
@@ -233,7 +237,7 @@ def main(selected_pokemon, num_opponents):
            f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
            f"{line_break}\n"
            f"First Simulation Result: \n{battle_results}\n\n")
-    #print(msg)
+    # print(msg)
 
     with open("result.txt", 'w', encoding="utf-8") as file:
         file.write(msg)
