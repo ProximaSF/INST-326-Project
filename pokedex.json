@@ -1,0 +1,5521 @@
+{
+  "lugia": {
+    "hp": 106,
+    "basic_attack": 90,
+    "defense": 130,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "moves": [
+      {
+        "gust": 40
+      },
+      {
+        "fly": 90
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "hydro-pump": 110
+      }
+    ]
+  },
+  "snubbull": {
+    "hp": 60,
+    "basic_attack": 80,
+    "defense": 50,
+    "types": [
+      "fairy"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "qwilfish": {
+    "hp": 65,
+    "basic_attack": 95,
+    "defense": 85,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "take-down": 90
+      },
+      {
+        "poison-sting": 15
+      }
+    ]
+  },
+  "horsea": {
+    "hp": 30,
+    "basic_attack": 40,
+    "defense": 70,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "aurora-beam": 65
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "zubat": {
+    "hp": 40,
+    "basic_attack": 45,
+    "defense": 35,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "moves": [
+      {
+        "gust": 40
+      },
+      {
+        "quick-attack": 40
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "doduo": {
+    "hp": 35,
+    "basic_attack": 85,
+    "defense": 45,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "quick-attack": 40
+      },
+      {
+        "swift": 60
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "nidorino": {
+    "hp": 61,
+    "basic_attack": 72,
+    "defense": 57,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "strength": 80
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "azumarill": {
+    "hp": 100,
+    "basic_attack": 50,
+    "defense": 80,
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "double-edge": 120
+      }
+    ]
+  },
+  "exeggcute": {
+    "hp": 60,
+    "basic_attack": 40,
+    "defense": 80,
+    "types": [
+      "grass",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "strength": 80
+      },
+      {
+        "mega-drain": 40
+      },
+      {
+        "confusion": 50
+      },
+      {
+        "dream-eater": 100
+      }
+    ]
+  },
+  "caterpie": {
+    "hp": 45,
+    "basic_attack": 30,
+    "defense": 35,
+    "types": [
+      "bug"
+    ],
+    "moves": []
+  },
+  "scyther": {
+    "hp": 70,
+    "basic_attack": 110,
+    "defense": 80,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "moves": [
+      {
+        "razor-wind": 80
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "crobat": {
+    "hp": 85,
+    "basic_attack": 90,
+    "defense": 80,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "moves": [
+      {
+        "wing-attack": 60
+      },
+      {
+        "fly": 90
+      },
+      {
+        "bite": 60
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "gloom": {
+    "hp": 60,
+    "basic_attack": 65,
+    "defense": 70,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "kadabra": {
+    "hp": 40,
+    "basic_attack": 35,
+    "defense": 30,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "gyarados": {
+    "hp": 95,
+    "basic_attack": 125,
+    "defense": 79,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thrash": 120
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "quilava": {
+    "hp": 58,
+    "basic_attack": 64,
+    "defense": 58,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "ember": 40
+      }
+    ]
+  },
+  "sudowoodo": {
+    "hp": 70,
+    "basic_attack": 100,
+    "defense": 115,
+    "types": [
+      "rock"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "slam": 80
+      }
+    ]
+  },
+  "omanyte": {
+    "hp": 35,
+    "basic_attack": 40,
+    "defense": 100,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "moves": [
+      {
+        "slam": 80
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      },
+      {
+        "aurora-beam": 65
+      }
+    ]
+  },
+  "hitmonchan": {
+    "hp": 50,
+    "basic_attack": 105,
+    "defense": 79,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mach-punch": 40
+      }
+    ]
+  },
+  "ditto": {
+    "hp": 48,
+    "basic_attack": 48,
+    "defense": 48,
+    "types": [
+      "normal"
+    ],
+    "moves": []
+  },
+  "kingdra": {
+    "hp": 75,
+    "basic_attack": 95,
+    "defense": 95,
+    "types": [
+      "water",
+      "dragon"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "water-gun": 40
+      },
+      {
+        "hydro-pump": 110
+      },
+      {
+        "surf": 90
+      }
+    ]
+  },
+  "pidgeotto": {
+    "hp": 63,
+    "basic_attack": 60,
+    "defense": 55,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "tackle": 40
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "exeggutor": {
+    "hp": 95,
+    "basic_attack": 95,
+    "defense": 85,
+    "types": [
+      "grass",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "confusion": 50
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "remoraid": {
+    "hp": 35,
+    "basic_attack": 65,
+    "defense": 35,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "water-gun": 40
+      },
+      {
+        "surf": 90
+      },
+      {
+        "ice-beam": 90
+      },
+      {
+        "psybeam": 65
+      }
+    ]
+  },
+  "alakazam": {
+    "hp": 55,
+    "basic_attack": 50,
+    "defense": 45,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "omastar": {
+    "hp": 70,
+    "basic_attack": 60,
+    "defense": 125,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      },
+      {
+        "constrict": 10
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "heracross": {
+    "hp": 80,
+    "basic_attack": 125,
+    "defense": 75,
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "horn-attack": 65
+      },
+      {
+        "fury-attack": 15
+      }
+    ]
+  },
+  "unown": {
+    "hp": 48,
+    "basic_attack": 72,
+    "defense": 48,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "sneasel": {
+    "hp": 55,
+    "basic_attack": 95,
+    "defense": 55,
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "scratch": 40
+      },
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "lapras": {
+    "hp": 130,
+    "basic_attack": 85,
+    "defense": 80,
+    "types": [
+      "water",
+      "ice"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "aurora-beam": 65
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "natu": {
+    "hp": 40,
+    "basic_attack": 50,
+    "defense": 45,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "moves": [
+      {
+        "peck": 35
+      },
+      {
+        "drill-peck": 80
+      },
+      {
+        "solar-beam": 120
+      },
+      {
+        "psychic": 90
+      }
+    ]
+  },
+  "elekid": {
+    "hp": 45,
+    "basic_attack": 63,
+    "defense": 37,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "karate-chop": 50
+      },
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      }
+    ]
+  },
+  "marowak": {
+    "hp": 60,
+    "basic_attack": 80,
+    "defense": 110,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "togepi": {
+    "hp": 35,
+    "basic_attack": 20,
+    "defense": 65,
+    "types": [
+      "fairy"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "double-edge": 120
+      },
+      {
+        "peck": 35
+      },
+      {
+        "solar-beam": 120
+      }
+    ]
+  },
+  "xatu": {
+    "hp": 65,
+    "basic_attack": 75,
+    "defense": 70,
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "moves": [
+      {
+        "fly": 90
+      },
+      {
+        "hyper-beam": 150
+      },
+      {
+        "peck": 35
+      },
+      {
+        "solar-beam": 120
+      }
+    ]
+  },
+  "mankey": {
+    "hp": 40,
+    "basic_attack": 80,
+    "defense": 35,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "ariados": {
+    "hp": 70,
+    "basic_attack": 90,
+    "defense": 70,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "moves": [
+      {
+        "poison-sting": 15
+      },
+      {
+        "hyper-beam": 150
+      },
+      {
+        "solar-beam": 120
+      },
+      {
+        "dig": 80
+      }
+    ]
+  },
+  "quagsire": {
+    "hp": 95,
+    "basic_attack": 85,
+    "defense": 85,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "slam": 80
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "water-gun": 40
+      }
+    ]
+  },
+  "machoke": {
+    "hp": 80,
+    "basic_attack": 100,
+    "defense": 70,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "hitmontop": {
+    "hp": 50,
+    "basic_attack": 95,
+    "defense": 95,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "rolling-kick": 60
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "strength": 80
+      },
+      {
+        "dig": 80
+      }
+    ]
+  },
+  "magmar": {
+    "hp": 65,
+    "basic_attack": 95,
+    "defense": 57,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "rapidash": {
+    "hp": 65,
+    "basic_attack": 100,
+    "defense": 70,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "fury-attack": 15
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "nidoran-f": {
+    "hp": 55,
+    "basic_attack": 47,
+    "defense": 52,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "wooper": {
+    "hp": 55,
+    "basic_attack": 45,
+    "defense": 45,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "slam": 80
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "body-slam": 85
+      }
+    ]
+  },
+  "ekans": {
+    "hp": 35,
+    "basic_attack": 60,
+    "defense": 44,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "slam": 80
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "jolteon": {
+    "hp": 65,
+    "basic_attack": 65,
+    "defense": 60,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "charmeleon": {
+    "hp": 58,
+    "basic_attack": 64,
+    "defense": 58,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "blissey": {
+    "hp": 255,
+    "basic_attack": 10,
+    "defense": 10,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "pound": 40
+      },
+      {
+        "double-slap": 15
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "double-edge": 120
+      }
+    ]
+  },
+  "lickitung": {
+    "hp": 90,
+    "basic_attack": 55,
+    "defense": 75,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "diglett": {
+    "hp": 10,
+    "basic_attack": 55,
+    "defense": 25,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "feint-attack": 60
+      },
+      {
+        "sludge-bomb": 90
+      }
+    ]
+  },
+  "nidorina": {
+    "hp": 70,
+    "basic_attack": 62,
+    "defense": 67,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "strength": 80
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "kabutops": {
+    "hp": 60,
+    "basic_attack": 115,
+    "defense": 105,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "mega-drain": 40
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "pidgeot": {
+    "hp": 83,
+    "basic_attack": 80,
+    "defense": 75,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "tackle": 40
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "vulpix": {
+    "hp": 38,
+    "basic_attack": 41,
+    "defense": 40,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "feint-attack": 60
+      },
+      {
+        "iron-tail": 100
+      }
+    ]
+  },
+  "smoochum": {
+    "hp": 45,
+    "basic_attack": 30,
+    "defense": 15,
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "pound": 40
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "blizzard": 110
+      },
+      {
+        "confusion": 50
+      }
+    ]
+  },
+  "bulbasaur": {
+    "hp": 45,
+    "basic_attack": 49,
+    "defense": 49,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "razor-wind": 80
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "petal-dance": 120
+      },
+      {
+        "skull-bash": 130
+      }
+    ]
+  },
+  "stantler": {
+    "hp": 73,
+    "basic_attack": 95,
+    "defense": 62,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "stomp": 65
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "take-down": 90
+      }
+    ]
+  },
+  "sentret": {
+    "hp": 35,
+    "basic_attack": 46,
+    "defense": 34,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "cut": 50
+      }
+    ]
+  },
+  "gastly": {
+    "hp": 30,
+    "basic_attack": 35,
+    "defense": 30,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "houndoom": {
+    "hp": 75,
+    "basic_attack": 90,
+    "defense": 50,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      },
+      {
+        "ember": 40
+      },
+      {
+        "flamethrower": 90
+      }
+    ]
+  },
+  "onix": {
+    "hp": 35,
+    "basic_attack": 45,
+    "defense": 160,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "iron-tail": 100
+      }
+    ]
+  },
+  "venonat": {
+    "hp": 60,
+    "basic_attack": 55,
+    "defense": 50,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "moves": [
+      {
+        "swift": 60
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      }
+    ]
+  },
+  "mewtwo": {
+    "hp": 106,
+    "basic_attack": 110,
+    "defense": 90,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "machop": {
+    "hp": 70,
+    "basic_attack": 80,
+    "defense": 50,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "rolling-kick": 60
+      }
+    ]
+  },
+  "snorlax": {
+    "hp": 160,
+    "basic_attack": 110,
+    "defense": 65,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "tackle": 40
+      }
+    ]
+  },
+  "wigglytuff": {
+    "hp": 140,
+    "basic_attack": 70,
+    "defense": 45,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "poliwag": {
+    "hp": 40,
+    "basic_attack": 50,
+    "defense": 40,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "raticate": {
+    "hp": 55,
+    "basic_attack": 81,
+    "defense": 60,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "strength": 80
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "zapdos": {
+    "hp": 90,
+    "basic_attack": 90,
+    "defense": 85,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "moves": [
+      {
+        "peck": 35
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "ho-oh": {
+    "hp": 106,
+    "basic_attack": 130,
+    "defense": 90,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "moves": [
+      {
+        "gust": 40
+      },
+      {
+        "fly": 90
+      },
+      {
+        "hyper-beam": 150
+      },
+      {
+        "strength": 80
+      }
+    ]
+  },
+  "delibird": {
+    "hp": 45,
+    "basic_attack": 55,
+    "defense": 45,
+    "types": [
+      "ice",
+      "flying"
+    ],
+    "moves": [
+      {
+        "fly": 90
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "blizzard": 110
+      },
+      {
+        "aurora-beam": 65
+      }
+    ]
+  },
+  "pikachu": {
+    "hp": 35,
+    "basic_attack": 55,
+    "defense": 40,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "strength": 80
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "clefable": {
+    "hp": 95,
+    "basic_attack": 70,
+    "defense": 73,
+    "types": [
+      "fairy"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "tyranitar": {
+    "hp": 100,
+    "basic_attack": 134,
+    "defense": 110,
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "thrash": 120
+      }
+    ]
+  },
+  "wartortle": {
+    "hp": 59,
+    "basic_attack": 63,
+    "defense": 80,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "donphan": {
+    "hp": 90,
+    "basic_attack": 120,
+    "defense": 120,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "horn-attack": 65
+      },
+      {
+        "fury-attack": 15
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "psyduck": {
+    "hp": 50,
+    "basic_attack": 52,
+    "defense": 48,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "psybeam": 65
+      },
+      {
+        "psychic": 90
+      }
+    ]
+  },
+  "ledian": {
+    "hp": 55,
+    "basic_attack": 35,
+    "defense": 50,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "moves": [
+      {
+        "comet-punch": 18
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "jigglypuff": {
+    "hp": 115,
+    "basic_attack": 45,
+    "defense": 20,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "wobbuffet": {
+    "hp": 190,
+    "basic_attack": 33,
+    "defense": 58,
+    "types": [
+      "psychic"
+    ],
+    "moves": []
+  },
+  "porygon": {
+    "hp": 65,
+    "basic_attack": 60,
+    "defense": 70,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "dream-eater": 100
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "fearow": {
+    "hp": 65,
+    "basic_attack": 90,
+    "defense": 65,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "steel-wing": 70
+      }
+    ]
+  },
+  "tangela": {
+    "hp": 65,
+    "basic_attack": 55,
+    "defense": 115,
+    "types": [
+      "grass"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "confusion": 50
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "eevee": {
+    "hp": 55,
+    "basic_attack": 55,
+    "defense": 50,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "iron-tail": 100
+      }
+    ]
+  },
+  "rhydon": {
+    "hp": 105,
+    "basic_attack": 130,
+    "defense": 120,
+    "types": [
+      "ground",
+      "rock"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "ponyta": {
+    "hp": 50,
+    "basic_attack": 85,
+    "defense": 55,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "double-kick": 30
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "thrash": 120
+      }
+    ]
+  },
+  "swinub": {
+    "hp": 50,
+    "basic_attack": 50,
+    "defense": 40,
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "body-slam": 85
+      },
+      {
+        "take-down": 90
+      }
+    ]
+  },
+  "espeon": {
+    "hp": 65,
+    "basic_attack": 65,
+    "defense": 60,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "psybeam": 65
+      }
+    ]
+  },
+  "croconaw": {
+    "hp": 65,
+    "basic_attack": 80,
+    "defense": 80,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "scratch": 40
+      },
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "graveler": {
+    "hp": 55,
+    "basic_attack": 95,
+    "defense": 115,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "cloyster": {
+    "hp": 50,
+    "basic_attack": 95,
+    "defense": 180,
+    "types": [
+      "water",
+      "ice"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "icy-wind": 55
+      },
+      {
+        "hidden-power": 60
+      },
+      {
+        "whirlpool": 35
+      }
+    ]
+  },
+  "mew": {
+    "hp": 100,
+    "basic_attack": 100,
+    "defense": 100,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "pichu": {
+    "hp": 20,
+    "basic_attack": 40,
+    "defense": 15,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "double-slap": 15
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "thunder-shock": 40
+      },
+      {
+        "thunder": 110
+      }
+    ]
+  },
+  "noctowl": {
+    "hp": 100,
+    "basic_attack": 50,
+    "defense": 50,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "fly": 90
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "take-down": 90
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "butterfree": {
+    "hp": 60,
+    "basic_attack": 45,
+    "defense": 50,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "giga-drain": 75
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "flareon": {
+    "hp": 65,
+    "basic_attack": 130,
+    "defense": 60,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "dragonair": {
+    "hp": 61,
+    "basic_attack": 84,
+    "defense": 65,
+    "types": [
+      "dragon"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "golem": {
+    "hp": 80,
+    "basic_attack": 120,
+    "defense": 130,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "steelix": {
+    "hp": 75,
+    "basic_attack": 85,
+    "defense": 200,
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "bind": 15
+      },
+      {
+        "slam": 80
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "golduck": {
+    "hp": 80,
+    "basic_attack": 82,
+    "defense": 78,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "articuno": {
+    "hp": 90,
+    "basic_attack": 85,
+    "defense": 100,
+    "types": [
+      "ice",
+      "flying"
+    ],
+    "moves": [
+      {
+        "gust": 40
+      },
+      {
+        "snore": 50
+      },
+      {
+        "powder-snow": 40
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "phanpy": {
+    "hp": 90,
+    "basic_attack": 60,
+    "defense": 60,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "body-slam": 85
+      },
+      {
+        "take-down": 90
+      }
+    ]
+  },
+  "kakuna": {
+    "hp": 45,
+    "basic_attack": 25,
+    "defense": 50,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "moves": []
+  },
+  "misdreavus": {
+    "hp": 60,
+    "basic_attack": 60,
+    "defense": 60,
+    "types": [
+      "ghost"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "psybeam": 65
+      },
+      {
+        "thunder": 110
+      },
+      {
+        "psychic": 90
+      }
+    ]
+  },
+  "dratini": {
+    "hp": 41,
+    "basic_attack": 64,
+    "defense": 45,
+    "types": [
+      "dragon"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "seel": {
+    "hp": 65,
+    "basic_attack": 45,
+    "defense": 55,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "slam": 80
+      },
+      {
+        "peck": 35
+      },
+      {
+        "lick": 30
+      },
+      {
+        "waterfall": 80
+      }
+    ]
+  },
+  "forretress": {
+    "hp": 75,
+    "basic_attack": 90,
+    "defense": 140,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "take-down": 90
+      },
+      {
+        "double-edge": 120
+      }
+    ]
+  },
+  "drowzee": {
+    "hp": 60,
+    "basic_attack": 48,
+    "defense": 45,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "larvitar": {
+    "hp": 50,
+    "basic_attack": 64,
+    "defense": 50,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "moves": [
+      {
+        "stomp": 65
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "thrash": 120
+      },
+      {
+        "bite": 60
+      }
+    ]
+  },
+  "beedrill": {
+    "hp": 65,
+    "basic_attack": 90,
+    "defense": 40,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      },
+      {
+        "fury-cutter": 40
+      }
+    ]
+  },
+  "blastoise": {
+    "hp": 79,
+    "basic_attack": 83,
+    "defense": 100,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "primeape": {
+    "hp": 65,
+    "basic_attack": 105,
+    "defense": 60,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "slowpoke": {
+    "hp": 90,
+    "basic_attack": 65,
+    "defense": 65,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "stomp": 65
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "dewgong": {
+    "hp": 90,
+    "basic_attack": 70,
+    "defense": 80,
+    "types": [
+      "water",
+      "ice"
+    ],
+    "moves": [
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      },
+      {
+        "icy-wind": 55
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "weedle": {
+    "hp": 40,
+    "basic_attack": 35,
+    "defense": 30,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "moves": []
+  },
+  "octillery": {
+    "hp": 75,
+    "basic_attack": 105,
+    "defense": 75,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "water-gun": 40
+      },
+      {
+        "surf": 90
+      },
+      {
+        "ice-beam": 90
+      },
+      {
+        "psybeam": 65
+      }
+    ]
+  },
+  "mr-mime": {
+    "hp": 40,
+    "basic_attack": 45,
+    "defense": 65,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "meowth": {
+    "hp": 40,
+    "basic_attack": 45,
+    "defense": 35,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "arcanine": {
+    "hp": 90,
+    "basic_attack": 110,
+    "defense": 80,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "flame-wheel": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "dragon-breath": 60
+      }
+    ]
+  },
+  "furret": {
+    "hp": 85,
+    "basic_attack": 76,
+    "defense": 64,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "scratch": 40
+      }
+    ]
+  },
+  "nidoking": {
+    "hp": 81,
+    "basic_attack": 102,
+    "defense": 77,
+    "types": [
+      "poison",
+      "ground"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "dunsparce": {
+    "hp": 100,
+    "basic_attack": 70,
+    "defense": 70,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "take-down": 90
+      },
+      {
+        "bite": 60
+      },
+      {
+        "strength": 80
+      }
+    ]
+  },
+  "arbok": {
+    "hp": 60,
+    "basic_attack": 95,
+    "defense": 69,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      }
+    ]
+  },
+  "dodrio": {
+    "hp": 60,
+    "basic_attack": 110,
+    "defense": 70,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "swift": 60
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "paras": {
+    "hp": 35,
+    "basic_attack": 70,
+    "defense": 55,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "moves": [
+      {
+        "psybeam": 65
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      }
+    ]
+  },
+  "vaporeon": {
+    "hp": 130,
+    "basic_attack": 65,
+    "defense": 60,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "slowking": {
+    "hp": 95,
+    "basic_attack": 75,
+    "defense": 80,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "water-gun": 40
+      }
+    ]
+  },
+  "aerodactyl": {
+    "hp": 80,
+    "basic_attack": 105,
+    "defense": 65,
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "earthquake": 100
+      },
+      {
+        "snore": 50
+      },
+      {
+        "steel-wing": 70
+      }
+    ]
+  },
+  "golbat": {
+    "hp": 75,
+    "basic_attack": 80,
+    "defense": 70,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "giga-drain": 75
+      },
+      {
+        "steel-wing": 70
+      }
+    ]
+  },
+  "machamp": {
+    "hp": 90,
+    "basic_attack": 130,
+    "defense": 80,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "mantine": {
+    "hp": 85,
+    "basic_attack": 40,
+    "defense": 70,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "moves": [
+      {
+        "wing-attack": 60
+      },
+      {
+        "slam": 80
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      }
+    ]
+  },
+  "magikarp": {
+    "hp": 20,
+    "basic_attack": 10,
+    "defense": 55,
+    "types": [
+      "water"
+    ],
+    "moves": []
+  },
+  "kangaskhan": {
+    "hp": 105,
+    "basic_attack": 95,
+    "defense": 80,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "stomp": 65
+      }
+    ]
+  },
+  "corsola": {
+    "hp": 65,
+    "basic_attack": 55,
+    "defense": 95,
+    "types": [
+      "water",
+      "rock"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "surf": 90
+      },
+      {
+        "bubble-beam": 65
+      }
+    ]
+  },
+  "raichu": {
+    "hp": 60,
+    "basic_attack": 90,
+    "defense": 55,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "strength": 80
+      },
+      {
+        "quick-attack": 40
+      }
+    ]
+  },
+  "cubone": {
+    "hp": 50,
+    "basic_attack": 50,
+    "defense": 95,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "rock-slide": 75
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "granbull": {
+    "hp": 90,
+    "basic_attack": 120,
+    "defense": 75,
+    "types": [
+      "fairy"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "moltres": {
+    "hp": 90,
+    "basic_attack": 100,
+    "defense": 90,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "moves": [
+      {
+        "wing-attack": 60
+      },
+      {
+        "ember": 40
+      },
+      {
+        "flamethrower": 90
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "charizard": {
+    "hp": 78,
+    "basic_attack": 84,
+    "defense": 78,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "wing-attack": 60
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "squirtle": {
+    "hp": 44,
+    "basic_attack": 48,
+    "defense": 65,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "confusion": 50
+      },
+      {
+        "waterfall": 80
+      }
+    ]
+  },
+  "voltorb": {
+    "hp": 40,
+    "basic_attack": 30,
+    "defense": 50,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      },
+      {
+        "rollout": 30
+      }
+    ]
+  },
+  "jynx": {
+    "hp": 65,
+    "basic_attack": 50,
+    "defense": 35,
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "ampharos": {
+    "hp": 90,
+    "basic_attack": 75,
+    "defense": 85,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      }
+    ]
+  },
+  "umbreon": {
+    "hp": 95,
+    "basic_attack": 65,
+    "defense": 110,
+    "types": [
+      "dark"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "teddiursa": {
+    "hp": 60,
+    "basic_attack": 80,
+    "defense": 50,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "scratch": 40
+      }
+    ]
+  },
+  "celebi": {
+    "hp": 100,
+    "basic_attack": 100,
+    "defense": 100,
+    "types": [
+      "psychic",
+      "grass"
+    ],
+    "moves": [
+      {
+        "hyper-beam": 150
+      },
+      {
+        "solar-beam": 120
+      },
+      {
+        "confusion": 50
+      },
+      {
+        "psychic": 90
+      }
+    ]
+  },
+  "seadra": {
+    "hp": 55,
+    "basic_attack": 65,
+    "defense": 95,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      },
+      {
+        "icy-wind": 55
+      }
+    ]
+  },
+  "spinarak": {
+    "hp": 40,
+    "basic_attack": 60,
+    "defense": 40,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "moves": [
+      {
+        "poison-sting": 15
+      },
+      {
+        "psybeam": 65
+      },
+      {
+        "solar-beam": 120
+      },
+      {
+        "dig": 80
+      }
+    ]
+  },
+  "poliwrath": {
+    "hp": 90,
+    "basic_attack": 95,
+    "defense": 95,
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "electabuzz": {
+    "hp": 65,
+    "basic_attack": 83,
+    "defense": 57,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "tyrogue": {
+    "hp": 35,
+    "basic_attack": 35,
+    "defense": 35,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "strength": 80
+      },
+      {
+        "swift": 60
+      }
+    ]
+  },
+  "mareep": {
+    "hp": 55,
+    "basic_attack": 40,
+    "defense": 40,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "body-slam": 85
+      },
+      {
+        "take-down": 90
+      }
+    ]
+  },
+  "smeargle": {
+    "hp": 55,
+    "basic_attack": 20,
+    "defense": 35,
+    "types": [
+      "normal"
+    ],
+    "moves": []
+  },
+  "tauros": {
+    "hp": 75,
+    "basic_attack": 100,
+    "defense": 95,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "horn-attack": 65
+      },
+      {
+        "thrash": 120
+      },
+      {
+        "surf": 90
+      }
+    ]
+  },
+  "sunflora": {
+    "hp": 75,
+    "basic_attack": 75,
+    "defense": 55,
+    "types": [
+      "grass"
+    ],
+    "moves": [
+      {
+        "pound": 40
+      },
+      {
+        "cut": 50
+      },
+      {
+        "hyper-beam": 150
+      },
+      {
+        "absorb": 20
+      }
+    ]
+  },
+  "abra": {
+    "hp": 25,
+    "basic_attack": 20,
+    "defense": 15,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "poliwhirl": {
+    "hp": 65,
+    "basic_attack": 65,
+    "defense": 65,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "parasect": {
+    "hp": 60,
+    "basic_attack": 95,
+    "defense": 80,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "pidgey": {
+    "hp": 40,
+    "basic_attack": 45,
+    "defense": 40,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "tackle": 40
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "feint-attack": 60
+      }
+    ]
+  },
+  "magby": {
+    "hp": 45,
+    "basic_attack": 75,
+    "defense": 37,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "karate-chop": 50
+      },
+      {
+        "mega-punch": 80
+      },
+      {
+        "fire-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      }
+    ]
+  },
+  "aipom": {
+    "hp": 55,
+    "basic_attack": 70,
+    "defense": 55,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "double-slap": 15
+      },
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      }
+    ]
+  },
+  "persian": {
+    "hp": 65,
+    "basic_attack": 70,
+    "defense": 60,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "dragonite": {
+    "hp": 91,
+    "basic_attack": 134,
+    "defense": 95,
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "wing-attack": 60
+      }
+    ]
+  },
+  "totodile": {
+    "hp": 50,
+    "basic_attack": 65,
+    "defense": 64,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "scratch": 40
+      },
+      {
+        "razor-wind": 80
+      },
+      {
+        "cut": 50
+      }
+    ]
+  },
+  "shellder": {
+    "hp": 30,
+    "basic_attack": 65,
+    "defense": 100,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "icy-wind": 55
+      },
+      {
+        "rapid-spin": 50
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "ledyba": {
+    "hp": 40,
+    "basic_attack": 20,
+    "defense": 30,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "moves": [
+      {
+        "comet-punch": 18
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "growlithe": {
+    "hp": 55,
+    "basic_attack": 70,
+    "defense": 45,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thrash": 120
+      },
+      {
+        "fire-spin": 35
+      },
+      {
+        "flame-wheel": 60
+      }
+    ]
+  },
+  "scizor": {
+    "hp": 70,
+    "basic_attack": 130,
+    "defense": 100,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "hyper-beam": 150
+      },
+      {
+        "strength": 80
+      }
+    ]
+  },
+  "ninetales": {
+    "hp": 73,
+    "basic_attack": 76,
+    "defense": 75,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "fire-spin": 35
+      },
+      {
+        "snore": 50
+      },
+      {
+        "iron-tail": 100
+      }
+    ]
+  },
+  "typhlosion": {
+    "hp": 78,
+    "basic_attack": 84,
+    "defense": 78,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "bellossom": {
+    "hp": 75,
+    "basic_attack": 80,
+    "defense": 95,
+    "types": [
+      "grass"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "hyper-beam": 150
+      },
+      {
+        "absorb": 20
+      },
+      {
+        "solar-beam": 120
+      }
+    ]
+  },
+  "shuckle": {
+    "hp": 20,
+    "basic_attack": 10,
+    "defense": 230,
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "wrap": 15
+      },
+      {
+        "strength": 80
+      },
+      {
+        "earthquake": 100
+      }
+    ]
+  },
+  "entei": {
+    "hp": 115,
+    "basic_attack": 115,
+    "defense": 85,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "stomp": 65
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      }
+    ]
+  },
+  "jumpluff": {
+    "hp": 75,
+    "basic_attack": 55,
+    "defense": 70,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "hyper-beam": 150
+      },
+      {
+        "mega-drain": 40
+      }
+    ]
+  },
+  "krabby": {
+    "hp": 30,
+    "basic_attack": 105,
+    "defense": 90,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "slam": 80
+      },
+      {
+        "dig": 80
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "goldeen": {
+    "hp": 45,
+    "basic_attack": 67,
+    "defense": 60,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "hydro-pump": 110
+      },
+      {
+        "psybeam": 65
+      },
+      {
+        "snore": 50
+      },
+      {
+        "icy-wind": 55
+      }
+    ]
+  },
+  "metapod": {
+    "hp": 50,
+    "basic_attack": 20,
+    "defense": 55,
+    "types": [
+      "bug"
+    ],
+    "moves": []
+  },
+  "murkrow": {
+    "hp": 60,
+    "basic_attack": 85,
+    "defense": 42,
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "moves": [
+      {
+        "wing-attack": 60
+      },
+      {
+        "fly": 90
+      },
+      {
+        "peck": 35
+      },
+      {
+        "drill-peck": 80
+      }
+    ]
+  },
+  "sandshrew": {
+    "hp": 50,
+    "basic_attack": 75,
+    "defense": 85,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "chikorita": {
+    "hp": 45,
+    "basic_attack": 49,
+    "defense": 65,
+    "types": [
+      "grass"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "vine-whip": 45
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      }
+    ]
+  },
+  "feraligatr": {
+    "hp": 85,
+    "basic_attack": 105,
+    "defense": 100,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "scratch": 40
+      },
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "weepinbell": {
+    "hp": 65,
+    "basic_attack": 90,
+    "defense": 50,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "igglybuff": {
+    "hp": 90,
+    "basic_attack": 30,
+    "defense": 15,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "moves": [
+      {
+        "pound": 40
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "solar-beam": 120
+      },
+      {
+        "psychic": 90
+      }
+    ]
+  },
+  "dugtrio": {
+    "hp": 35,
+    "basic_attack": 100,
+    "defense": 50,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "porygon2": {
+    "hp": 85,
+    "basic_attack": 80,
+    "defense": 90,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "tackle": 40
+      },
+      {
+        "blizzard": 110
+      },
+      {
+        "psybeam": 65
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "sandslash": {
+    "hp": 75,
+    "basic_attack": 100,
+    "defense": 110,
+    "types": [
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "rattata": {
+    "hp": 30,
+    "basic_attack": 56,
+    "defense": 35,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      },
+      {
+        "fury-swipes": 18
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "ursaring": {
+    "hp": 90,
+    "basic_attack": 130,
+    "defense": 75,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "scratch": 40
+      }
+    ]
+  },
+  "nidoran-m": {
+    "hp": 46,
+    "basic_attack": 57,
+    "defense": 40,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "confusion": 50
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "kingler": {
+    "hp": 55,
+    "basic_attack": 130,
+    "defense": 115,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "icy-wind": 55
+      }
+    ]
+  },
+  "victreebel": {
+    "hp": 80,
+    "basic_attack": 105,
+    "defense": 65,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "vine-whip": 45
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "sunkern": {
+    "hp": 30,
+    "basic_attack": 30,
+    "defense": 30,
+    "types": [
+      "grass"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "absorb": 20
+      },
+      {
+        "mega-drain": 40
+      },
+      {
+        "solar-beam": 120
+      }
+    ]
+  },
+  "clefairy": {
+    "hp": 70,
+    "basic_attack": 45,
+    "defense": 48,
+    "types": [
+      "fairy"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "hitmonlee": {
+    "hp": 50,
+    "basic_attack": 120,
+    "defense": 53,
+    "types": [
+      "fighting"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "suicune": {
+    "hp": 100,
+    "basic_attack": 75,
+    "defense": 115,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "gust": 40
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      }
+    ]
+  },
+  "ivysaur": {
+    "hp": 60,
+    "basic_attack": 62,
+    "defense": 63,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "skarmory": {
+    "hp": 65,
+    "basic_attack": 80,
+    "defense": 140,
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "fly": 90
+      },
+      {
+        "fury-attack": 15
+      },
+      {
+        "peck": 35
+      }
+    ]
+  },
+  "slowbro": {
+    "hp": 95,
+    "basic_attack": 75,
+    "defense": 110,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "miltank": {
+    "hp": 95,
+    "basic_attack": 80,
+    "defense": 105,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "stomp": 65
+      }
+    ]
+  },
+  "bellsprout": {
+    "hp": 50,
+    "basic_attack": 75,
+    "defense": 35,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "leech-life": 80
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "chinchou": {
+    "hp": 75,
+    "basic_attack": 38,
+    "defense": 38,
+    "types": [
+      "water",
+      "electric"
+    ],
+    "moves": [
+      {
+        "take-down": 90
+      },
+      {
+        "water-gun": 40
+      },
+      {
+        "hydro-pump": 110
+      },
+      {
+        "surf": 90
+      }
+    ]
+  },
+  "magneton": {
+    "hp": 50,
+    "basic_attack": 60,
+    "defense": 95,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      },
+      {
+        "rollout": 30
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "oddish": {
+    "hp": 45,
+    "basic_attack": 50,
+    "defense": 55,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "razor-leaf": 55
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "gligar": {
+    "hp": 65,
+    "basic_attack": 75,
+    "defense": 105,
+    "types": [
+      "ground",
+      "flying"
+    ],
+    "moves": [
+      {
+        "razor-wind": 80
+      },
+      {
+        "cut": 50
+      },
+      {
+        "wing-attack": 60
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "kabuto": {
+    "hp": 30,
+    "basic_attack": 80,
+    "defense": 90,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "moves": [
+      {
+        "aurora-beam": 65
+      },
+      {
+        "mega-drain": 40
+      },
+      {
+        "dig": 80
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "charmander": {
+    "hp": 39,
+    "basic_attack": 52,
+    "defense": 43,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      },
+      {
+        "rock-slide": 75
+      }
+    ]
+  },
+  "lanturn": {
+    "hp": 125,
+    "basic_attack": 58,
+    "defense": 58,
+    "types": [
+      "water",
+      "electric"
+    ],
+    "moves": [
+      {
+        "take-down": 90
+      },
+      {
+        "water-gun": 40
+      },
+      {
+        "hydro-pump": 110
+      },
+      {
+        "surf": 90
+      }
+    ]
+  },
+  "venusaur": {
+    "hp": 80,
+    "basic_attack": 82,
+    "defense": 83,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "skiploom": {
+    "hp": 55,
+    "basic_attack": 45,
+    "defense": 50,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "mega-drain": 40
+      },
+      {
+        "solar-beam": 120
+      }
+    ]
+  },
+  "cleffa": {
+    "hp": 50,
+    "basic_attack": 25,
+    "defense": 28,
+    "types": [
+      "fairy"
+    ],
+    "moves": [
+      {
+        "pound": 40
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "solar-beam": 120
+      },
+      {
+        "psychic": 90
+      }
+    ]
+  },
+  "togetic": {
+    "hp": 55,
+    "basic_attack": 40,
+    "defense": 85,
+    "types": [
+      "fairy",
+      "flying"
+    ],
+    "moves": [
+      {
+        "fly": 90
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "double-edge": 120
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "yanma": {
+    "hp": 65,
+    "basic_attack": 65,
+    "defense": 45,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "solar-beam": 120
+      },
+      {
+        "quick-attack": 40
+      }
+    ]
+  },
+  "bayleef": {
+    "hp": 60,
+    "basic_attack": 62,
+    "defense": 80,
+    "types": [
+      "grass"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "body-slam": 85
+      }
+    ]
+  },
+  "hoothoot": {
+    "hp": 60,
+    "basic_attack": 30,
+    "defense": 30,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "wing-attack": 60
+      },
+      {
+        "fly": 90
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "take-down": 90
+      }
+    ]
+  },
+  "grimer": {
+    "hp": 80,
+    "basic_attack": 80,
+    "defense": 50,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "lick": 30
+      }
+    ]
+  },
+  "farfetchd": {
+    "hp": 52,
+    "basic_attack": 90,
+    "defense": 55,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "gust": 40
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "quick-attack": 40
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "muk": {
+    "hp": 105,
+    "basic_attack": 105,
+    "defense": 75,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "thief": 60
+      }
+    ]
+  },
+  "tentacool": {
+    "hp": 40,
+    "basic_attack": 40,
+    "defense": 35,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "moves": [
+      {
+        "aurora-beam": 65
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "icy-wind": 55
+      }
+    ]
+  },
+  "rhyhorn": {
+    "hp": 80,
+    "basic_attack": 85,
+    "defense": 95,
+    "types": [
+      "ground",
+      "rock"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thrash": 120
+      },
+      {
+        "blizzard": 110
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "hoppip": {
+    "hp": 35,
+    "basic_attack": 35,
+    "defense": 40,
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "moves": [
+      {
+        "pay-day": 40
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "double-edge": 120
+      }
+    ]
+  },
+  "cyndaquil": {
+    "hp": 39,
+    "basic_attack": 52,
+    "defense": 43,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "thrash": 120
+      }
+    ]
+  },
+  "slugma": {
+    "hp": 40,
+    "basic_attack": 40,
+    "defense": 40,
+    "types": [
+      "fire"
+    ],
+    "moves": [
+      {
+        "body-slam": 85
+      },
+      {
+        "ember": 40
+      },
+      {
+        "flamethrower": 90
+      },
+      {
+        "rock-throw": 50
+      }
+    ]
+  },
+  "vileplume": {
+    "hp": 75,
+    "basic_attack": 80,
+    "defense": 85,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "moves": [
+      {
+        "absorb": 20
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "spearow": {
+    "hp": 40,
+    "basic_attack": 60,
+    "defense": 30,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "moves": [
+      {
+        "quick-attack": 40
+      },
+      {
+        "tri-attack": 80
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "meganium": {
+    "hp": 80,
+    "basic_attack": 82,
+    "defense": 100,
+    "types": [
+      "grass"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "body-slam": 85
+      }
+    ]
+  },
+  "weezing": {
+    "hp": 65,
+    "basic_attack": 90,
+    "defense": 120,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "staryu": {
+    "hp": 30,
+    "basic_attack": 45,
+    "defense": 55,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "aurora-beam": 65
+      },
+      {
+        "waterfall": 80
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "houndour": {
+    "hp": 45,
+    "basic_attack": 60,
+    "defense": 30,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      },
+      {
+        "ember": 40
+      },
+      {
+        "flamethrower": 90
+      }
+    ]
+  },
+  "raikou": {
+    "hp": 90,
+    "basic_attack": 85,
+    "defense": 75,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "cut": 50
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "bite": 60
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "haunter": {
+    "hp": 45,
+    "basic_attack": 50,
+    "defense": 45,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "moves": [
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "starmie": {
+    "hp": 60,
+    "basic_attack": 75,
+    "defense": 85,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "waterfall": 80
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      }
+    ]
+  },
+  "flaaffy": {
+    "hp": 70,
+    "basic_attack": 55,
+    "defense": 55,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      }
+    ]
+  },
+  "magnemite": {
+    "hp": 25,
+    "basic_attack": 35,
+    "defense": 70,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      },
+      {
+        "rollout": 30
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "gengar": {
+    "hp": 60,
+    "basic_attack": 65,
+    "defense": 60,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "piloswine": {
+    "hp": 100,
+    "basic_attack": 100,
+    "defense": 80,
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "horn-attack": 65
+      },
+      {
+        "fury-attack": 15
+      },
+      {
+        "take-down": 90
+      }
+    ]
+  },
+  "venomoth": {
+    "hp": 70,
+    "basic_attack": 65,
+    "defense": 60,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "moves": [
+      {
+        "gust": 40
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      }
+    ]
+  },
+  "tentacruel": {
+    "hp": 80,
+    "basic_attack": 70,
+    "defense": 65,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      },
+      {
+        "icy-wind": 55
+      },
+      {
+        "giga-drain": 75
+      }
+    ]
+  },
+  "pupitar": {
+    "hp": 70,
+    "basic_attack": 84,
+    "defense": 70,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "thrash": 120
+      },
+      {
+        "bite": 60
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "girafarig": {
+    "hp": 70,
+    "basic_attack": 80,
+    "defense": 65,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "moves": [
+      {
+        "stomp": 65
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "take-down": 90
+      }
+    ]
+  },
+  "pinsir": {
+    "hp": 65,
+    "basic_attack": 125,
+    "defense": 100,
+    "types": [
+      "bug"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "fury-attack": 15
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "koffing": {
+    "hp": 40,
+    "basic_attack": 65,
+    "defense": 95,
+    "types": [
+      "poison"
+    ],
+    "moves": [
+      {
+        "psybeam": 65
+      },
+      {
+        "thief": 60
+      },
+      {
+        "snore": 50
+      },
+      {
+        "sludge-bomb": 90
+      }
+    ]
+  },
+  "pineco": {
+    "hp": 50,
+    "basic_attack": 65,
+    "defense": 90,
+    "types": [
+      "bug"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "take-down": 90
+      },
+      {
+        "double-edge": 120
+      }
+    ]
+  },
+  "marill": {
+    "hp": 70,
+    "basic_attack": 20,
+    "defense": 50,
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "moves": [
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "tackle": 40
+      },
+      {
+        "double-edge": 120
+      }
+    ]
+  },
+  "geodude": {
+    "hp": 40,
+    "basic_attack": 80,
+    "defense": 100,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "nidoqueen": {
+    "hp": 90,
+    "basic_attack": 92,
+    "defense": 87,
+    "types": [
+      "poison",
+      "ground"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "headbutt": 70
+      }
+    ]
+  },
+  "hypno": {
+    "hp": 85,
+    "basic_attack": 73,
+    "defense": 70,
+    "types": [
+      "psychic"
+    ],
+    "moves": [
+      {
+        "fire-punch": 75
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "thunder-punch": 75
+      },
+      {
+        "snore": 50
+      }
+    ]
+  },
+  "seaking": {
+    "hp": 80,
+    "basic_attack": 92,
+    "defense": 65,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "snore": 50
+      },
+      {
+        "icy-wind": 55
+      },
+      {
+        "hidden-power": 60
+      }
+    ]
+  },
+  "magcargo": {
+    "hp": 60,
+    "basic_attack": 50,
+    "defense": 120,
+    "types": [
+      "fire",
+      "rock"
+    ],
+    "moves": [
+      {
+        "body-slam": 85
+      },
+      {
+        "ember": 40
+      },
+      {
+        "flamethrower": 90
+      },
+      {
+        "hyper-beam": 150
+      }
+    ]
+  },
+  "politoed": {
+    "hp": 90,
+    "basic_attack": 75,
+    "defense": 75,
+    "types": [
+      "water"
+    ],
+    "moves": [
+      {
+        "double-slap": 15
+      },
+      {
+        "ice-punch": 75
+      },
+      {
+        "headbutt": 70
+      },
+      {
+        "water-gun": 40
+      }
+    ]
+  },
+  "chansey": {
+    "hp": 250,
+    "basic_attack": 5,
+    "defense": 5,
+    "types": [
+      "normal"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "dream-eater": 100
+      },
+      {
+        "snore": 50
+      },
+      {
+        "mud-slap": 20
+      }
+    ]
+  },
+  "electrode": {
+    "hp": 60,
+    "basic_attack": 50,
+    "defense": 70,
+    "types": [
+      "electric"
+    ],
+    "moves": [
+      {
+        "headbutt": 70
+      },
+      {
+        "snore": 50
+      },
+      {
+        "zap-cannon": 120
+      },
+      {
+        "rollout": 30
+      }
+    ]
+  }
+}
