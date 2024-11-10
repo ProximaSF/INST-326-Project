@@ -48,11 +48,10 @@ def add_moves(moves_list):
     for move_data in moves_list:  # move_data is a dictionary
         if len(valid_moves_list) != 4:
             move_version = move_data["version_group_details"][0]["version_group"]["url"]
+            move_name = move_data["move"]["name"]
+            move_url = move_data["move"]["url"]
             #print(move_version)
             if "version-group/3/" in move_version:
-                #print(True)
-                move_name = move_data["move"]["name"]
-                move_url = move_data["move"]["url"]
                 response = requests.get(move_url)
                 if response.status_code == 200:
                     power_pokemon_data = response.json()
