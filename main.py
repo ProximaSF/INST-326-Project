@@ -254,7 +254,7 @@ def main(selected_pokemon, num_opponents):
                       type[1] == max(sorted_type_score, key=lambda m: sorted_type_score[1])[1]]
 
     line_break = "↔↔↔↔↔↔" * 18
-    msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"
+    msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"  # Unknown and stellar removed
            f"{line_break}\n"
            f"Selected Pokemon Info: \n{selected_pokemon_pokedex}\n\n"
            f"{line_break}\n"
@@ -263,10 +263,10 @@ def main(selected_pokemon, num_opponents):
            f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
            f"Pokmons used in battles: \n{[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}\n\n"
            f"{line_break}\n"
-           f"First Simulation Result: \n{battle_results}\n\n"
+           f"Simulation Result: \n{battle_results}\n\n"
            f"{line_break}\n"
-           f"Won about {round(mean_win_rate*100, 2)}% of the time.\n{sorted_type_score}\n"
-           f"Was most effective against {most_effective}")
+           f"Won about {round(mean_win_rate*100, 2)}% of the battles.\n{sorted_type_score}\n"
+           f"Was least effective against {most_effective}")
     # print(msg)
 
     with open("result.txt", 'w', encoding="utf-8") as file:
