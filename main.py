@@ -203,7 +203,30 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex
 
 
 # Function Five
+def advantage_probability(selected_pokemon, opponent_pokemon, type_advantage):
+    # Type Advantage
+    total_multiplier = 1.0
+    selected_types = selected_pokemon['types']
+    opponent_types = opponent_pokemon['types']
+    for s_type in selected_types:
+        for o_type in opponent_types:
+            multiplier = type_advantage.get(s_type, {}).get(o_type, 1.0)
+            total_multiplier *= multiplier
+    num_comparisons = len(selected_types) * len(opponent_types)
+    average_multiplier = total_multiplier ** (1 / num_comparisons) if num_comparisons > 0 else 1
+    type_score = average_multiplier
+    type_probability = max(0, min(1, (type_score + 2) / 4))
 
+    # Stat Advantage 
+    hp_ratio = selected_pokemon['hp'] / opponent_pokemon['hp']
+    defense_ratio = selected_pokemon['defense'] / opponent_pokemon['defense']
+    stat_score = (hp_ratio + defense_ratio) / 2
+    stat_probability = max(0, min(1, stat_score / 2))
+
+    # Combined
+    combined_probability = (0.6 * type_probability) + (0.4 * stat_probability)
+    return combined_probability
+# ----------------------------------------------------------------------------------------------------------
 
 # Other Functions
 def main(selected_pokemon, num_opponents):
