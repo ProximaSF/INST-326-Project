@@ -20,7 +20,7 @@ get_type_and_johto_pokemons_instance = johto_pokemons_and_types
 
 
 # Function two
-def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
+def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations):
     with open("pokedex.json", 'r', encoding='utf-8') as file:
         pokedex_data = json.load(file)
 
@@ -83,7 +83,7 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations=10):
     return win_rate, selected_wins, opponent_wins
 
 # Tracks results against several pokemon
-def battle_against_all(selected_pokemon, all_opponents, num_simulations=10):
+def battle_against_all(selected_pokemon, all_opponents, num_simulations=90):
     types_score = {}
     win_count = 0
     total_battles = 0
@@ -217,7 +217,8 @@ def main(selected_pokemon, num_opponents):
 
     if int(num_opponents) <= 54:
         num_opponents = 54
-    num_opponents = (num_opponents // 18) * 18
+    else:
+        num_opponents = (int(num_opponents) // 18) * 18
 
     # selected_pokemon = "pikachu"
     # num_opponents = random.randrange(54, 180, step=18)
@@ -225,6 +226,9 @@ def main(selected_pokemon, num_opponents):
     selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info_instance(selected_pokemon, num_opponents,
                                                                                     pokemon_list)
     battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex)
+    sorted_type_score = sorted(types_score.items(), key=lambda s: s[1], reverse=True)
+    most_effective = [type for type in sorted_type_score if
+                      type[1] == max(sorted_type_score, key=lambda m: sorted_type_score[1])[1]]
 
     line_break = "↔↔↔↔↔↔" * 18
     msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"
@@ -234,12 +238,12 @@ def main(selected_pokemon, num_opponents):
            f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
            f"{line_break}\n"
            f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
-           f"{line_break}\n"
            f"Pokmons used in battles: \n{[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}\n\n"
            f"{line_break}\n"
-           f"All Pokemon Opponent Info: \n{opponent_pokemons_pokedex}\n\n"
+           f"First Simulation Result: \n{battle_results}\n\n"
            f"{line_break}\n"
-           f"First Simulation Result: \n{battle_results}\n\n")
+           f"Won about {round(mean_win_rate*100, 2)}% of the time.\n{sorted_type_score}\n"
+           f"Was most effective against {most_effective}")
     # print(msg)
 
     with open("result.txt", 'w', encoding="utf-8") as file:
