@@ -259,8 +259,8 @@ def main(selected_pokemon, num_opponents):
             selected_pokemon,
             opponent,
             {**selected_pokemon_pokedex, **opponent_pokemons_pokedex}
-    )
-    probability_results.append((opponent, win_probability))
+        )
+        probability_results.append((opponent, win_probability))
 
     line_break = "↔↔↔↔↔↔" * 18
     msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"  # Unknown and stellar removed
