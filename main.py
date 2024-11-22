@@ -96,7 +96,7 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=90):
 
         battle_results.append({
             "opponent": opponent,
-            "win_rate": win_rate,
+            "win_rate": round(win_rate, 2),
             "selected_wins": selected_wins,
             "opponent_wins": opponent_wins
         })
@@ -197,7 +197,7 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex
         if random.uniform(0, 1) < combined_prob:
             win_count += 1
     win_probability = win_count / num_simulations
-    print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
+    #print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
     return win_probability
 # ----------------------------------------------------------------------------------------------------------
 
@@ -238,8 +238,12 @@ def main(selected_pokemon, num_opponents):
         print(f"{selected_pokemon} is not a Pokemon, check the spelling")
         return
 
-    if int(num_opponents) <= 54:
-        num_opponents = 54
+    if int(num_opponents) < 54 or int(num_opponents) > 251:
+        print(f"{"-------"*10}\n"
+              "Pick a number of Pokemon used in battle between 54-251\n"
+              "Don't need to be exact, will be rounded to value that is evenly dividable by 18\n"
+              f"{"-------"*10}\n")
+        return
     else:
         num_opponents = (int(num_opponents) // 18) * 18
 
@@ -275,12 +279,26 @@ def main(selected_pokemon, num_opponents):
            f"Simulation Result: \n{battle_results}\n\n"
            f"{line_break}\n"
            f"Won about {round(mean_win_rate*100, 2)}% of the battles.\n{sorted_type_score}\n"
-           f"Was least effective against {most_effective}"
+           f"Was least effective against {most_effective}\n"
+           f"{line_break}\n"
            f"Win Probabilities:\n")
+
     #prints msg
-    for opponent, probability in probability_results:
-        msg += f"- Probability of winning against {opponent.capitalize()}: {round(probability * 100, 2)}%\n"
-    
+    '''for opponent, probability in probability_results:
+        msg += f"- Probability of winning against {opponent.capitalize()}: {round(probability * 100, 2)}%\n"'''
+
+    print(probability_results)
+    print("---"*30)
+    compare_result = {}
+    i = 0
+    for pokemon in battle_results:
+        simulation1_pokemon = pokemon["opponent"]
+        simulation1_win_rate = pokemon["win_rate"]
+        simulation2_win_rate = probability_results[i][1]
+        compare_result[simulation1_pokemon] = f"({round(simulation1_win_rate * 100, 2)}%, {round(simulation2_win_rate * 100, 2)}%)"
+        i += 1
+    msg += str(compare_result)
+
     
     with open("result.txt", 'w', encoding="utf-8") as file: 
         file.write(msg)
@@ -298,3 +316,6 @@ if __name__ == "__main__":
 
     # Example in the console ↓ (windows):
     # python .\main.py "pikachu" 53
+
+    # https://www.thegamer.com/pokemon-gold-silver-strongest-generation-2-ii-stats/
+    # https://www.thegamer.com/weakest-johto-pokemon-ranked/
