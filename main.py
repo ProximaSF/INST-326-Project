@@ -168,12 +168,12 @@ def damage(DBM_stats, types_info):
     pick_basic_attack = random.random() # Maybe replace it with an energy system later on
     if pick_basic_attack >= 0.6:
         return calculate_damage(basic_attack, defence) or basic_attack/3
-    if moves:
+    elif moves:
         move_type = random.choice(moves)
         move_damage = next(iter(move_type.values()))  # get the first value in iteration
         return calculate_damage(move_damage, defence) or move_damage/3
     else:
-        return 0
+        return calculate_damage(basic_attack, defence) or basic_attack/3
 # ----------------------------------------------------------------------------------------------------------
 
 
@@ -271,7 +271,7 @@ def main(selected_pokemon, num_opponents):
            f"{line_break}\n"
            f"Selected Pokemon Info: \n{selected_pokemon_pokedex}\n\n"
            f"{line_break}\n"
-           f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
+           #f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
            f"{line_break}\n"
            f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
            f"Pokmons used in battles: \n{[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}\n\n"
