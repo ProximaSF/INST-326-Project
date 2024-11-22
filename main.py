@@ -252,6 +252,15 @@ def main(selected_pokemon, num_opponents):
     sorted_type_score = sorted(types_score.items(), key=lambda s: s[1], reverse=True)
     most_effective = [type for type in sorted_type_score if
                       type[1] == max(sorted_type_score, key=lambda m: sorted_type_score[1])[1]]
+    
+    probability_results = []
+    for opponent in opponent_pokemons_pokedex:
+        win_probability = combined_distrubution_simulation(
+            selected_pokemon,
+            opponent,
+            {**selected_pokemon_pokedex, **opponent_pokemons_pokedex}
+        )
+        probability_results.append((opponent, win_probability))
 
     line_break = "↔↔↔↔↔↔" * 18
     msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"  # Unknown and stellar removed
@@ -266,10 +275,14 @@ def main(selected_pokemon, num_opponents):
            f"Simulation Result: \n{battle_results}\n\n"
            f"{line_break}\n"
            f"Won about {round(mean_win_rate*100, 2)}% of the battles.\n{sorted_type_score}\n"
-           f"Was least effective against {most_effective}")
-    # print(msg)
-
-    with open("result.txt", 'w', encoding="utf-8") as file:
+           f"Was least effective against {most_effective}"
+           f"Win Probabilities:\n")
+    #prints msg
+    for opponent, probability in probability_results:
+        msg += f"- Probability of winning against {opponent.capitalize()}: {round(probability * 100, 2)}%\n"
+    
+    
+    with open("result.txt", 'w', encoding="utf-8") as file: 
         file.write(msg)
     print(f"Created/updated result.txt\n{line_break}\n")
 
