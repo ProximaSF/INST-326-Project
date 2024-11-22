@@ -11,7 +11,7 @@ print("John is late, but here")'''
 
 
 
-# Function One
+# Function One - Jay
 from Functions.pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
 
 get_pokemon_info_instance = get_pokemon_info
@@ -19,7 +19,7 @@ get_type_and_johto_pokemons_instance = johto_pokemons_and_types
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function two
+# Function Two - Griffin
 def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations):
     with open("pokedex.json", 'r', encoding='utf-8') as file:
         pokedex_data = json.load(file)
@@ -130,7 +130,7 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=90):
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function three
+# Function Three - Ismail
 type_advantage = {  # Type advantages as of gen 6
     "fire": {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 2, "bug": 2, "rock": 0.5, "dragon": 0.5, "steel": 2},
     "water": {"fire": 2, "water": 0.5, "grass": 0.5, "ground": 2, "rock": 2, "dragon": 0.5},
@@ -177,7 +177,7 @@ def damage(DBM_stats, types_info):
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function Four
+# Function Four - Wuilmer
 def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex_data, num_simulations=100):
     def probability_calculation(selected_data, opponent_data):
         hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
@@ -202,7 +202,7 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function Five
+# Function Five - John
 def advantage_probability(selected_pokemon, opponent_pokemon, type_advantage):
     # Type Advantage
     total_multiplier = 1.0
