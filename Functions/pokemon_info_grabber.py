@@ -31,7 +31,7 @@ def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
 
     selected_pokedex_data = {selected_pokemon: get_store_pokemon(selected_pokemon)}
 
-    print(len(pokedex_data))
+    #print(len(pokedex_data))
     other_pokemons_data = {}
     pokemon_names = johto_pokemons[:]
     for i in range(num_pokemon):
@@ -65,6 +65,9 @@ def add_moves(moves_list):
                         pass
     return valid_moves_list
 
+
+
+
 def johto_pokemons_and_types():
     pokemon_list = []
     pokemon_types_list = []
@@ -79,4 +82,6 @@ def johto_pokemons_and_types():
                 pokemon_types_list = [type for type in pokemon_types_list if type not in remove_type]
             else:
                 pokemon_list = [pokemon["pokemon_species"]["name"] for pokemon in data["pokemon_entries"]]
+        '''print("----"*50)
+        print(sorted(pokemon_list))'''
     return pokemon_list, pokemon_types_list
