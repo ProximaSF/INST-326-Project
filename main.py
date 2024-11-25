@@ -38,7 +38,7 @@ type_advantage = {  # Type advantages as of gen 6
 
 class PokemonSimulationOne():
     def __init__(self, selected_pokemon, num_opponents, num_simulations):
-        self.selected_pokemon_name = selected_pokemon
+        self.selected_pokemon_name = selected_pokemon.lower()
         self.num_opponents = num_opponents
         self.num_simulations = num_simulations
 
