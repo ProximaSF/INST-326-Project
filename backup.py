@@ -9,17 +9,17 @@ print("Griffin says hey")
 print("Wuilmer was here.")
 print("John is late, but here")'''
 
-
-
-# Function One
+# Function One - Jay
 from Functions.pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
 
 get_pokemon_info_instance = get_pokemon_info
 get_type_and_johto_pokemons_instance = johto_pokemons_and_types
+
+
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function two
+# Function Two - Griffin
 def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations):
     with open("pokedex.json", 'r', encoding='utf-8') as file:
         pokedex_data = json.load(file)
@@ -38,7 +38,6 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations):
     selected_defense = selected_data["defense"]
     selected_attack = selected_data["basic_attack"]
     selected_moves = selected_data["moves"]
-
 
     # Stats for opponents pokemon
     opponent_hp = opponent_data["hp"]
@@ -82,8 +81,9 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations):
     win_rate = selected_wins / num_simulations
     return win_rate, selected_wins, opponent_wins
 
+
 # Tracks results against several pokemon
-def battle_against_all(selected_pokemon, all_opponents, num_simulations=300):
+def battle_against_all(selected_pokemon, all_opponents, num_simulations):
     types_score = {}
     win_count = 0
     total_battles = 0
@@ -96,7 +96,7 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=300):
 
         battle_results.append({
             "opponent": opponent,
-            "win_rate": win_rate,
+            "win_rate": round(win_rate, 2),
             "selected_wins": selected_wins,
             "opponent_wins": opponent_wins
         })
@@ -127,10 +127,12 @@ def battle_against_all(selected_pokemon, all_opponents, num_simulations=300):
         # print(f"Most effective type against {selected_pokemon} is {most_effective_type}. Earned a score of {types_score[most_effective_type]})")
 
     return battle_results, mean_win_rate, types_score
+
+
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function three
+# Function Three - Ismail
 type_advantage = {  # Type advantages as of gen 6
     "fire": {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 2, "bug": 2, "rock": 0.5, "dragon": 0.5, "steel": 2},
     "water": {"fire": 2, "water": 0.5, "grass": 0.5, "ground": 2, "rock": 2, "dragon": 0.5},
@@ -155,6 +157,7 @@ type_advantage = {  # Type advantages as of gen 6
     "fairy": {"fire": 0.5, "fighting": 2, "poison": 0.5, "dragon": 2, "dark": 2, "steel": 0.5}
 }
 
+
 def damage(DBM_stats, types_info):
     defence = DBM_stats[0]
     basic_attack = DBM_stats[1]
@@ -164,21 +167,22 @@ def damage(DBM_stats, types_info):
     def calculate_damage(attack, defence):
         pass
 
-
-    pick_basic_attack = random.random() # Maybe replace it with an energy system later on
+    pick_basic_attack = random.random()  # Maybe replace it with an energy system later on
     if pick_basic_attack >= 0.6:
-        return calculate_damage(basic_attack, defence) or basic_attack/3
-    if moves:
+        return calculate_damage(basic_attack, defence) or basic_attack / 3
+    elif moves:
         move_type = random.choice(moves)
         move_damage = next(iter(move_type.values()))  # get the first value in iteration
-        return calculate_damage(move_damage, defence) or move_damage/3
+        return calculate_damage(move_damage, defence) or move_damage / 3
     else:
-        return 0
+        return calculate_damage(basic_attack, defence) or basic_attack / 3
+
+
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function Four
-def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex_data, num_simulations=100):
+# Function Four - Wuilmer
+def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex_data, num_simulations):
     def probability_calculation(selected_data, opponent_data):
         hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
         attack_prob = selected_data["basic_attack"] / (selected_data["basic_attack"] + opponent_data["basic_attack"])
@@ -197,16 +201,43 @@ def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex
         if random.uniform(0, 1) < combined_prob:
             win_count += 1
     win_probability = win_count / num_simulations
-    print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
+    # print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon.upper()} is :{win_probability}")
     return win_probability
+
+
 # ----------------------------------------------------------------------------------------------------------
 
 
-# Function Five
+# Function Five - John
+def advantage_probability(selected_pokemon, opponent_pokemon, type_advantage):
+    # Type Advantage
+    total_multiplier = 1.0
+    selected_types = selected_pokemon['types']
+    opponent_types = opponent_pokemon['types']
+    for s_type in selected_types:
+        for o_type in opponent_types:
+            multiplier = type_advantage.get(s_type, {}).get(o_type, 1.0)
+            total_multiplier *= multiplier
+    num_comparisons = len(selected_types) * len(opponent_types)
+    average_multiplier = total_multiplier ** (1 / num_comparisons) if num_comparisons > 0 else 1
+    type_score = average_multiplier
+    type_probability = max(0, min(1, (type_score + 2) / 4))
 
+    # Stat Advantage
+    hp_ratio = selected_pokemon['hp'] / opponent_pokemon['hp']
+    defense_ratio = selected_pokemon['defense'] / opponent_pokemon['defense']
+    stat_score = (hp_ratio + defense_ratio) / 2
+    stat_probability = max(0, min(1, stat_score / 2))
+
+    # Combined
+    combined_probability = (0.6 * type_probability) + (0.4 * stat_probability)
+    return combined_probability
+
+
+# ----------------------------------------------------------------------------------------------------------
 
 # Other Functions
-def main(selected_pokemon, num_opponents):
+def main(selected_pokemon, num_opponents, num_simulations):
     pokemon_list, pokemon_types_list = get_type_and_johto_pokemons_instance()
     pokemon_list_copy = pokemon_list.copy()  # For msg use only to ensure 251 Pokemons for Johto region
 
@@ -215,8 +246,12 @@ def main(selected_pokemon, num_opponents):
         print(f"{selected_pokemon} is not a Pokemon, check the spelling")
         return
 
-    if int(num_opponents) <= 54:
-        num_opponents = 54
+    if int(num_opponents) < 54 or int(num_opponents) > 251:
+        print(f"{"-------" * 10}\n"
+              "Pick a number of Pokemon used in battle between 54-251\n"
+              "Don't need to be exact, will be rounded to value that is evenly dividable by 18\n"
+              f"{"-------" * 10}\n")
+        return
     else:
         num_opponents = (int(num_opponents) // 18) * 18
 
@@ -225,40 +260,78 @@ def main(selected_pokemon, num_opponents):
 
     selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info_instance(selected_pokemon, num_opponents,
                                                                                     pokemon_list)
-    battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex)
+    battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex,
+                                                                    num_simulations)
     sorted_type_score = sorted(types_score.items(), key=lambda s: s[1], reverse=True)
     most_effective = [type for type in sorted_type_score if
                       type[1] == max(sorted_type_score, key=lambda m: sorted_type_score[1])[1]]
 
+    probability_results = []
+    for opponent in opponent_pokemons_pokedex:
+        win_probability = combined_distrubution_simulation(
+            selected_pokemon,
+            opponent,
+            {**selected_pokemon_pokedex, **opponent_pokemons_pokedex},
+            num_simulations
+        )
+        probability_results.append((opponent, win_probability))
+
     line_break = "↔↔↔↔↔↔" * 18
-    msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"
+    msg = (f"Pokemon Types: \n{pokemon_types_list}\n\n"  # Unknown and stellar removed
            f"{line_break}\n"
            f"Selected Pokemon Info: \n{selected_pokemon_pokedex}\n\n"
            f"{line_break}\n"
-           f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
+           # f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
            f"{line_break}\n"
            f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
-           f"Pokmons used in battles: \n{[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}\n\n"
+           f"Pokmons used in battles: \n{sorted([pokemon.capitalize() for pokemon in opponent_pokemons_pokedex])}\n\n"
            f"{line_break}\n"
-           f"First Simulation Result: \n{battle_results}\n\n"
+           f"Simulation 1 Result: \n"
+           f"{sorted(battle_results, key=lambda s: s["opponent"])}\n\n"
            f"{line_break}\n"
-           f"Won about {round(mean_win_rate*100, 2)}% of the time.\n{sorted_type_score}\n"
-           f"Was most effective against {most_effective}")
-    # print(msg)
+           f"Won about {round(mean_win_rate * 100, 2)}% of the battles.\n{sorted_type_score}\n"
+           f"Was least effective against {most_effective}\n"
+           f"{line_break}\n"
+           f"Win Probabilities:\n")
 
+    # prints msg
+    '''for opponent, probability in probability_results:
+        msg += f"- Probability of winning against {opponent.capitalize()}: {round(probability * 100, 2)}%\n"'''
+
+    print(probability_results)
+    print("---" * 30)
+    compare_result = {}
+    i = 0
+    for pokemon in battle_results:
+        simulation1_pokemon = pokemon["opponent"]
+        simulation1_win_rate = pokemon["win_rate"]
+        simulation2_win_rate = probability_results[i][1]
+        compare_result[
+            simulation1_pokemon] = f"({round(simulation1_win_rate * 100, 2)}%, {round(simulation2_win_rate * 100, 2)}%)"
+        i += 1
+    msg += str({pokemon_name: compare_result[pokemon_name] for pokemon_name in sorted(compare_result)})
+
+    print(f"Number of Simulations: {num_simulations}")
     with open("result.txt", 'w', encoding="utf-8") as file:
         file.write(msg)
     print(f"Created/updated result.txt\n{line_break}\n")
+
 
 def parse_args(arglist):
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
     parser.add_argument("number_opponents", help="The number of unique Pokemons to simulate")
+    parser.add_argument("-s", "--simulations", type=int, default=50, help="The number of battles to simulate")
+
     return parser.parse_args(arglist)
+
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
-    main(args.selected_pokemon, args.number_opponents)
+    main(args.selected_pokemon, args.number_opponents, args.simulations)
 
     # Example in the console ↓ (windows):
     # python .\main.py "pikachu" 53
+
+    # https://www.thegamer.com/pokemon-gold-silver-strongest-generation-2-ii-stats/
+    # https://www.thegamer.com/weakest-johto-pokemon-ranked/

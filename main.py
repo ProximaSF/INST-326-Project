@@ -83,7 +83,7 @@ def battle_simulation(selected_pokemon, opponent_pokemon, num_simulations):
     return win_rate, selected_wins, opponent_wins
 
 # Tracks results against several pokemon
-def battle_against_all(selected_pokemon, all_opponents, num_simulations=90):
+def battle_against_all(selected_pokemon, all_opponents, num_simulations):
     types_score = {}
     win_count = 0
     total_battles = 0
@@ -178,7 +178,7 @@ def damage(DBM_stats, types_info):
 
 
 # Function Four - Wuilmer
-def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex_data, num_simulations=100):
+def combined_distrubution_simulation(selected_pokemon, opponent_pokemon, pokedex_data, num_simulations):
     def probability_calculation(selected_data, opponent_data):
         hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
         attack_prob = selected_data["basic_attack"] / (selected_data["basic_attack"] + opponent_data["basic_attack"])
@@ -229,7 +229,7 @@ def advantage_probability(selected_pokemon, opponent_pokemon, type_advantage):
 # ----------------------------------------------------------------------------------------------------------
 
 # Other Functions
-def main(selected_pokemon, num_opponents):
+def main(selected_pokemon, num_opponents, num_simulations):
     pokemon_list, pokemon_types_list = get_type_and_johto_pokemons_instance()
     pokemon_list_copy = pokemon_list.copy()  # For msg use only to ensure 251 Pokemons for Johto region
 
@@ -252,7 +252,7 @@ def main(selected_pokemon, num_opponents):
 
     selected_pokemon_pokedex, opponent_pokemons_pokedex = get_pokemon_info_instance(selected_pokemon, num_opponents,
                                                                                     pokemon_list)
-    battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex)
+    battle_results, mean_win_rate, types_score = battle_against_all(selected_pokemon, opponent_pokemons_pokedex, num_simulations)
     sorted_type_score = sorted(types_score.items(), key=lambda s: s[1], reverse=True)
     most_effective = [type for type in sorted_type_score if
                       type[1] == max(sorted_type_score, key=lambda m: sorted_type_score[1])[1]]
@@ -262,7 +262,8 @@ def main(selected_pokemon, num_opponents):
         win_probability = combined_distrubution_simulation(
             selected_pokemon,
             opponent,
-            {**selected_pokemon_pokedex, **opponent_pokemons_pokedex}
+            {**selected_pokemon_pokedex, **opponent_pokemons_pokedex},
+            num_simulations
         )
         probability_results.append((opponent, win_probability))
 
@@ -274,9 +275,10 @@ def main(selected_pokemon, num_opponents):
            #f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
            f"{line_break}\n"
            f"{num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
-           f"Pokmons used in battles: \n{[pokemon.capitalize() for pokemon in opponent_pokemons_pokedex]}\n\n"
+           f"Pokmons used in battles: \n{sorted([pokemon.capitalize() for pokemon in opponent_pokemons_pokedex])}\n\n"
            f"{line_break}\n"
-           f"Simulation Result: \n{battle_results}\n\n"
+           f"Simulation 1 Result: \n"
+           f"{sorted(battle_results, key=lambda s: s["opponent"])}\n\n"
            f"{line_break}\n"
            f"Won about {round(mean_win_rate*100, 2)}% of the battles.\n{sorted_type_score}\n"
            f"Was least effective against {most_effective}\n"
@@ -297,9 +299,9 @@ def main(selected_pokemon, num_opponents):
         simulation2_win_rate = probability_results[i][1]
         compare_result[simulation1_pokemon] = f"({round(simulation1_win_rate * 100, 2)}%, {round(simulation2_win_rate * 100, 2)}%)"
         i += 1
-    msg += str(compare_result)
+    msg += str({pokemon_name: compare_result[pokemon_name] for pokemon_name in sorted(compare_result)})
 
-    
+    print(f"Number of Simulations: {num_simulations}")
     with open("result.txt", 'w', encoding="utf-8") as file: 
         file.write(msg)
     print(f"Created/updated result.txt\n{line_break}\n")
@@ -308,11 +310,13 @@ def parse_args(arglist):
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
     parser.add_argument("number_opponents", help="The number of unique Pokemons to simulate")
+    parser.add_argument("-s", "--simulations", type=int, default=50, help="The number of battles to simulate")
+
     return parser.parse_args(arglist)
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
-    main(args.selected_pokemon, args.number_opponents)
+    main(args.selected_pokemon, args.number_opponents, args.simulations)
 
     # Example in the console ↓ (windows):
     # python .\main.py "pikachu" 53
