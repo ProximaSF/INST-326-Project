@@ -180,7 +180,8 @@ class PokemonSimulationOne():
 
 
     def print_result(self):
-        all_pokemon_list, all_pokemon_types_list, selected_pokemons_data_dict, opponent_pokemon_names_data_dict = self.get_info()
+        all_pokemon_list, all_pokemon_types_list, selected_pokemons_data_dict, opponent_pokemon_data_dict = self.get_info()
+        #print(opponent_pokemon_data_dict)
         pokemon_sim_2_instance = PokemonSimulationTwo(self.selected_pokemon_name, self.num_opponents, self.num_simulations)
 
         pokemon_list_copy = all_pokemon_list.copy()  # For msg use only to ensure 251 Pokemons for Johto region
@@ -198,16 +199,16 @@ class PokemonSimulationOne():
         else:
             self.num_opponents = (int(self.num_opponents) // 18) * 18
 
-        battle_results, mean_win_rate, types_score = self.battle_against_all(opponent_pokemon_names_data_dict)
+        battle_results, mean_win_rate, types_score = self.battle_against_all(opponent_pokemon_data_dict)
         sorted_type_score = sorted(types_score.items(), key=lambda s: s[1], reverse=True)
         most_effective = [type for type in sorted_type_score if
                           type[1] == max(sorted_type_score, key=lambda m: sorted_type_score[1])[1]]
 
         probability_results = []
-        for opponent in opponent_pokemon_names_data_dict:
+        for opponent in opponent_pokemon_data_dict:
             win_probability = pokemon_sim_2_instance.combined_distrubution_simulation(
                 opponent,
-                {**selected_pokemons_data_dict, **opponent_pokemon_names_data_dict})
+                {**selected_pokemons_data_dict, **opponent_pokemon_data_dict})
             probability_results.append((opponent, win_probability))
 
         line_break = "↔↔↔↔↔↔" * 18
@@ -218,7 +219,7 @@ class PokemonSimulationOne():
                f"There are {len(pokemon_list_copy)} Pokemon from Johto\n{pokemon_list_copy}\n\n"  # This should reflect 251
                f"{line_break}\n"
                f"{self.num_opponents} different Pokemons fought {selected_pokemon.capitalize()} one at a time\n\n"
-               f"Pokmons used in battles: \n{sorted([pokemon.capitalize() for pokemon in opponent_pokemon_names_data_dict])}\n\n"
+               f"Pokmons used in battles: \n{sorted([pokemon.capitalize() for pokemon in opponent_pokemon_data_dict])}\n\n"
                f"{line_break}\n"
                f"Simulation 1 Result: \n"
                f"{sorted(battle_results, key=lambda s: s["opponent"])}\n\n"
