@@ -3,7 +3,7 @@ import random
 import sys
 from argparse import ArgumentParser
 
-from Functions.pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
+from pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
 
 '''print("Jay was here ☺")
 print("Ismail says hi")
