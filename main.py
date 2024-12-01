@@ -72,7 +72,7 @@ class PokemonSimulationOne():
 
         # Stats for opponents pokemon
         opponent_hp = opponent_data["hp"]
-        opponent_defense = selected_data["defense"]
+        opponent_defense = opponent_data["defense"]
         opponent_attack = opponent_data["basic_attack"]
         opponent_moves = opponent_data["moves"]
 
@@ -83,6 +83,10 @@ class PokemonSimulationOne():
 
         # Type stats for both opponents
         both_opponent_types = (selected_data["types"], opponent_data["types"])
+
+        #print("A:" + self.selected_pokemon_name + str(selected_DBM_stats))
+        #print("B:" + opponent_pokemon_name + str(opponent_DBM_stats))
+        #print("C:" + str(both_opponent_types))
 
         # Win Counter
         selected_wins = 0
@@ -95,15 +99,17 @@ class PokemonSimulationOne():
             # Start battle set
             while selected_pokemon_hp > 0 and opponent_pokemon_name_hp > 0:
 
+                pokemon_name = self.selected_pokemon_name
                 # Selected Pokémon attacks first
-                damage_inflict = self.damage(selected_DBM_stats, both_opponent_types)
+                damage_inflict = self.damage(pokemon_name, selected_DBM_stats, opponent_defense, both_opponent_types)
                 opponent_pokemon_name_hp -= damage_inflict
                 if opponent_pokemon_name_hp <= 0:
                     selected_wins += 1
                     break
 
+                pokemon_name = opponent_pokemon_name
                 # Opponent Pokémon attacks
-                damage_inflict = self.damage(opponent_DBM_stats, both_opponent_types)
+                damage_inflict = self.damage(pokemon_name, opponent_DBM_stats, selected_defense, both_opponent_types)
                 selected_pokemon_hp -= damage_inflict
                 if selected_pokemon_hp <= 0:
                     opponent_wins += 1
@@ -159,24 +165,38 @@ class PokemonSimulationOne():
 
         return battle_results, mean_win_rate, types_score
 
-    def damage(self, DBM_stats, types_info):
-        defence = DBM_stats[0]
+    def damage(self, pokemon_name, DBM_stats, opponent_defence, both_opponent_types):
         basic_attack = DBM_stats[1]
         moves = DBM_stats[2]
 
-        # Calculate dmg based on type match up and defense
-        def calculate_damage(attack, defence):
-            pass
+        # print(f"A: {pokemon_name, defence, basic_attack, moves, both_opponent_types}")
 
-        pick_basic_attack = random.random()  # Maybe replace it with an energy system later on
-        if pick_basic_attack >= 0.6:
-            return calculate_damage(basic_attack, defence) or basic_attack / 3
-        elif moves:
+        # Calculate dmg based on type match up and defense
+        def calculate_damage(power_damage):
+            meh = True
+            level = 1
+
+            attacker_type = both_opponent_types[0] if pokemon_name == self.selected_pokemon_name else both_opponent_types[1]
+            attacker_type = next(iter(attacker_type))
+            defender_type = both_opponent_types[0] if pokemon_name != self.selected_pokemon_name else both_opponent_types[1]
+            defender_type = next(iter(defender_type))
+
+            type_advantage_multiplier = type_advantage[attacker_type].get(defender_type, 1)
+
+            if meh:
+                output = ((((2*level/5) + 2) * power_damage * (basic_attack / opponent_defence)) / 50) * type_advantage_multiplier
+                #print(f"Output: {output}")
+                return int(output)
+            else:
+                pass
+
+        if moves:
             move_type = random.choice(moves)
             move_damage = next(iter(move_type.values()))  # get the first value in iteration
-            return calculate_damage(move_damage, defence) or move_damage / 3
+            return calculate_damage(move_damage) or move_damage / 3
         else:
-            return calculate_damage(basic_attack, defence) or basic_attack / 3
+            return calculate_damage(basic_attack)/4.4
+
 
 
     def print_result(self):
@@ -322,3 +342,4 @@ if __name__ == "__main__":
 
     # https://www.thegamer.com/pokemon-gold-silver-strongest-generation-2-ii-stats/
     # https://www.thegamer.com/weakest-johto-pokemon-ranked/
+    # https://bulbapedia.bulbagarden.net/wiki/Damage damage calculator
