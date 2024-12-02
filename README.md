@@ -52,10 +52,10 @@ Uses the command line argument in the console to run simulations.
 - [ ] `ArgumentParser` class
 - [ ] Sequence unpacking
 - [ ] set operations (union, intersection, etc)
-- [ ] Comprehensions or generator expressions
+- [x] Comprehensions or generator expressions
 - using `lambda` with these functions
   - [ ] `list.sort()`
-  - [ ] ``sorted()`,
+  - [x] ``sorted()`,
   - [ ]  `min()` or `max()`:
 
 - [ ] `super()` : method override
