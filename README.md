@@ -47,7 +47,7 @@ Uses the command line argument in the console to run simulations.
 
 - [ ] conditional expressions
 - [ ] optional parameters and/or keyword arguments
-- [ ] f-strings containing expressions
+- [x] f-strings containing expressions
 - [x] `with` statements
 - [x] `ArgumentParser` class
 - [ ] Sequence unpacking
