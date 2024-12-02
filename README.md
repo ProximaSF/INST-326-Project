@@ -33,28 +33,34 @@ Uses the command line argument in the console to run simulations.
 
 ## Attribution
 
-| **Method/function                                    | **Primary author** | **Techniques demonstrated** |
-| ---------------------------------------------------- | ------------------ | --------------------------- |
-| functions in `pokemon_info_grabber.py`, `parse_args` | Jay Walter         | ArgumentParser, Sorted()    |
-|                                                      | Wuilmer Palacios   |                             |
-|                                                      | Ismail Touray      |                             |
-|                                                      | Griffin Biddle     |                             |
-|                                                      | John Downes        |                             |
+| **Method/function                          | **Primary author** | **Techniques demonstrated**   |
+| ------------------------------------------ | ------------------ | ----------------------------- |
+| All functions in `pokemon_info_grabber.py` | Jay Walter         | List comprehensions           |
+| print_result                               | Jay Walter         | Use of `lmabda` in `sorted()` |
+|                                            | Wuilmer Palacios   |                               |
+|                                            | Ismail Touray      |                               |
+| battle_against_all                         | Griffin Biddle     | with statements, json.load    |
+| battle_simulation                          | Griffin Biddle     | f-strings with expressions    |
+|                                            | John Downes        |                               |
 
 ## Concepts:
 
 - [ ] conditional expressions
 - [ ] optional parameters and/or keyword arguments
-- [ ] f-strings containing expressions
-- [ ] `with` statements
-- [x] `ArgumentParser` class
+- [x] f-strings containing expressions
+- [x] `with` statements
+- [ ] `ArgumentParser` class
 - [ ] Sequence unpacking
 - [ ] set operations (union, intersection, etc)
 - [ ] Comprehensions or generator expressions
-- [x] `list.sort()`, `sorted()`, `min()`, or `max()`: using `lambda` with those functions
+- using `lambda` with these functions
+  - [ ] `list.sort()`
+  - [ ] ``sorted()`,
+  - [ ]  `min()` or `max()`:
+
 - [ ] `super()` : method override
 - [ ] composition of two custom classes
-- [ ]  `json.dumps()`, `json.loads()`, `json.dump()`, or `json.load()`
+- [x] `json.dumps()`, `json.loads()`, `json.dump()`, or `json.load()`
 - [ ] Use of `re`
 - [ ] magic methods beside`__init__()`
 - [ ] operations on `Pandas` 
