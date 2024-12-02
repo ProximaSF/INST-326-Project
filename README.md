@@ -47,7 +47,7 @@ Uses the command line argument in the console to run simulations.
 - [ ] conditional expressions
 - [ ] optional parameters and/or keyword arguments
 - [ ] f-strings containing expressions
-- [ ] `with` statements
+- [x] `with` statements
 - [x] `ArgumentParser` class
 - [ ] Sequence unpacking
 - [ ] set operations (union, intersection, etc)
@@ -55,7 +55,7 @@ Uses the command line argument in the console to run simulations.
 - [x] `list.sort()`, `sorted()`, `min()`, or `max()`: using `lambda` with those functions
 - [ ] `super()` : method override
 - [ ] composition of two custom classes
-- [ ]  `json.dumps()`, `json.loads()`, `json.dump()`, or `json.load()`
+- [x]  `json.dumps()`, `json.loads()`, `json.dump()`, or `json.load()`
 - [ ] Use of `re`
 - [ ] magic methods beside`__init__()`
 - [ ] operations on `Pandas` 
