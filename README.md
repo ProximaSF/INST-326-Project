@@ -40,7 +40,7 @@ Uses the command line argument in the console to run simulations.
 |                                                      | Wuilmer Palacios   |                             |
 |                                                      | Ismail Touray      |                             |
 | battle_simulation                                    | Griffin Biddle     | with statements, json.load  |
-| battle_against_all                                   | Griffin Biddle     | key function (used max)     |
+| battle_against_all                                   | Griffin Biddle     | max()                       |
 |                                                      | John Downes        |                             |
 
 ## Concepts:
