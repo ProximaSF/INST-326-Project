@@ -66,8 +66,6 @@ def add_moves(moves_list):
     return valid_moves_list
 
 
-
-
 def johto_pokemons_and_types():
     pokemon_list = []
     pokemon_types_list = []

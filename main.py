@@ -12,7 +12,7 @@ print("Wuilmer was here.")
 print("John is late, but here")'''
 
 
-type_advantage = {  # Type advantages as of gen 6
+type_advantage = {  # Type advantages
     "fire": {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 2, "bug": 2, "rock": 0.5, "dragon": 0.5, "steel": 2},
     "water": {"fire": 2, "water": 0.5, "grass": 0.5, "ground": 2, "rock": 2, "dragon": 0.5},
     "grass": {"fire": 0.5, "water": 2, "grass": 0.5, "poison": 0.5, "ground": 2, "flying": 0.5, "bug": 0.5,
@@ -198,8 +198,16 @@ class PokemonSimulationOne():
             return calculate_damage(basic_attack)/4.4
 
 
-
     def print_result(self):
+        if int(self.num_opponents) < 54 or int(self.num_opponents) > 251:
+            print(f"{"-------" * 10}\n"
+                  "Pick a number of Pokemon used in battle between 54-251\n"
+                  "Don't need to be exact, will be rounded to a value that's dividable by 18\n"
+                  f"{"-------" * 10}\n")
+            return
+        else:
+            self.num_opponents = (int(self.num_opponents) // 18) * 18
+
         all_pokemon_list, all_pokemon_types_list, selected_pokemons_data_dict, opponent_pokemon_data_dict = self.get_info()
         #print(opponent_pokemon_data_dict)
         pokemon_sim_2_instance = PokemonSimulationTwo(self.selected_pokemon_name, self.num_opponents, self.num_simulations)
@@ -207,17 +215,8 @@ class PokemonSimulationOne():
         pokemon_list_copy = all_pokemon_list.copy()  # For msg use only to ensure 251 Pokemons for Johto region
         selected_pokemon = self.selected_pokemon_name.lower()
         if selected_pokemon not in all_pokemon_list:
-            print(f"{selected_pokemon} is not a Pokemon, check the spelling")
+            print(f"{selected_pokemon} is not a Pokemon, check the spelling and it's for 2nd gen")
             return
-
-        if int(self.num_opponents) < 54 or int(self.num_opponents) > 251:
-            print(f"{"-------" * 10}\n"
-                  "Pick a number of Pokemon used in battle between 54-251\n"
-                  "Don't need to be exact, will be rounded to value that is evenly dividable by 18\n"
-                  f"{"-------" * 10}\n")
-            return
-        else:
-            self.num_opponents = (int(self.num_opponents) // 18) * 18
 
         battle_results, mean_win_rate, types_score = self.battle_against_all(opponent_pokemon_data_dict)
         sorted_type_score = sorted(types_score.items(), key=lambda s: s[1], reverse=True)
@@ -244,13 +243,15 @@ class PokemonSimulationOne():
                f"Simulation 1 Result: \n"
                f"{sorted(battle_results, key=lambda s: s["opponent"])}\n\n"
                f"{line_break}\n"
-               f"Won about {round(mean_win_rate * 100, 2)}% of the battles.\n{sorted_type_score}\n"
-               f"Was least effective against {most_effective}\n"
+               f"Won about {round(mean_win_rate * 100, 2)}% of the battles (sim 1).\n{sorted_type_score}\n"
+               f"Was least effective against (sim 1) {most_effective}\n\n"
                f"{line_break}\n"
-               f"Win Probabilities:\n")
+               f"Simulation 2 Result: \n"
+               f"{probability_results}\n\n"
+               f"{line_break}\n"
+               f"Win Probabilities (sim1, sim2):\n")
 
-        print(probability_results)
-        print("---" * 30)
+        #print(probability_results)
         compare_result = {}
         i = 0
         for pokemon in battle_results:
@@ -338,7 +339,9 @@ if __name__ == "__main__":
     main(args.selected_pokemon, args.number_opponents, args.simulations)
 
     # Example in the console ↓ (windows):
-    # python .\main.py "pikachu" 53
+    # python .\main.py "pikachu" 54
+    # python .\main.py "Typhlosion" 54 -s 100
+
 
     # https://www.thegamer.com/pokemon-gold-silver-strongest-generation-2-ii-stats/
     # https://www.thegamer.com/weakest-johto-pokemon-ranked/
