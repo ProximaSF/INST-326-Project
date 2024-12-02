@@ -35,7 +35,7 @@ Uses the command line argument in the console to run simulations.
 
 | **Method/function                                    | **Primary author** | **Techniques demonstrated** |
 | ---------------------------------------------------- | ------------------ | --------------------------- |
-| pokemon_info_grabber.py                              | Jay Walter         |                             |
+| pokemon_info_grabber.py                              | Jay Walter         | f-string                    |
 | parse_args                                           | Jay Walter         | ArgumentParser              |
 |                                                      | Wuilmer Palacios   |                             |
 |                                                      | Ismail Touray      |                             |
