@@ -37,10 +37,10 @@ Uses the command line argument in the console to run simulations.
 | ---------------------------------------------------- | ------------------ | --------------------------- |
 | pokemon_info_grabber.py                              | Jay Walter         | f-string                    |
 | parse_args                                           | Jay Walter         | ArgumentParser              |
-|                                                      | Wuilmer Palacios   |                             |
 |                                                      | Ismail Touray      |                             |
 | battle_simulation                                    | Griffin Biddle     | with statements, json.load  |
 | battle_against_all                                   | Griffin Biddle     | max()                       |
+|                                                      | Wuilmer Palacios   |                             |
 |                                                      | John Downes        |                             |
 
 ## Concepts:
