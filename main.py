@@ -49,6 +49,7 @@ class PokemonSimulationOne():
         get_pokemon_info_instance = get_pokemon_info
         selected_pokemons_data_dict, opponent_pokemon_names_data_dict = get_pokemon_info_instance(self.selected_pokemon_name, self.num_opponents, all_pokemon_list)
 
+        print(f"Running simulation for {self.selected_pokemon_name()}.")
         return all_pokemon_list, all_pokemon_types_list, selected_pokemons_data_dict, opponent_pokemon_names_data_dict
 
     def battle_simulation(self, opponent_pokemon_name):
