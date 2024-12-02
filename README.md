@@ -35,7 +35,8 @@ Uses the command line argument in the console to run simulations.
 
 | **Method/function                                    | **Primary author** | **Techniques demonstrated** |
 | ---------------------------------------------------- | ------------------ | --------------------------- |
-| functions in `pokemon_info_grabber.py`, `parse_args` | Jay Walter         | ArgumentParser, Sorted()    |
+| pokemon_info_grabber.py                              | Jay Walter         |                             |
+| parse_args                                           | Jay Walter         | ArgumentParser              |
 |                                                      | Wuilmer Palacios   |                             |
 |                                                      | Ismail Touray      |                             |
 | battle_simulation                                    | Griffin Biddle     | with statements, json.load  |
