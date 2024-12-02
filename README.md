@@ -35,20 +35,18 @@ Uses the command line argument in the console to run simulations.
 
 | **Method/function                                    | **Primary author** | **Techniques demonstrated** |
 | ---------------------------------------------------- | ------------------ | --------------------------- |
-| pokemon_info_grabber.py                              | Jay Walter         | f-string                    |
-| parse_args                                           | Jay Walter         | ArgumentParser              |
-|                                                      | Ismail Touray      |                             |
-| battle_simulation                                    | Griffin Biddle     | with statements, json.load  |
-| battle_against_all                                   | Griffin Biddle     | max()                       |
+| functions in `pokemon_info_grabber.py`, `parse_args` | Jay Walter         | ArgumentParser, Sorted()    |
 |                                                      | Wuilmer Palacios   |                             |
+|                                                      | Ismail Touray      |                             |
+|                                                      | Griffin Biddle     |                             |
 |                                                      | John Downes        |                             |
 
 ## Concepts:
 
 - [ ] conditional expressions
 - [ ] optional parameters and/or keyword arguments
-- [x] f-strings containing expressions
-- [x] `with` statements
+- [ ] f-strings containing expressions
+- [ ] `with` statements
 - [x] `ArgumentParser` class
 - [ ] Sequence unpacking
 - [ ] set operations (union, intersection, etc)
@@ -56,7 +54,7 @@ Uses the command line argument in the console to run simulations.
 - [x] `list.sort()`, `sorted()`, `min()`, or `max()`: using `lambda` with those functions
 - [ ] `super()` : method override
 - [ ] composition of two custom classes
-- [x]  `json.dumps()`, `json.loads()`, `json.dump()`, or `json.load()`
+- [ ]  `json.dumps()`, `json.loads()`, `json.dump()`, or `json.load()`
 - [ ] Use of `re`
 - [ ] magic methods beside`__init__()`
 - [ ] operations on `Pandas` 
@@ -64,9 +62,9 @@ Uses the command line argument in the console to run simulations.
 
 
 
-Damage formula:
+Damage formula (sim 1):
 
 
 $$
-damage = (\ (\frac{2*level}{5}) * move\ damage * \frac{basic\ attack}{opponenet\ defence}+ 2\ ) * (type\ advanatge)
+damage = (\frac{((\frac{2*level}{5}) * move\ damage * \frac{basic\ attack}{opponenet\ defence})}{50} + 2) * (type\ advanatge)
 $$

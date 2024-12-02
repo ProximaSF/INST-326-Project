@@ -171,7 +171,7 @@ class PokemonSimulationOne():
         # print(f"A: {pokemon_name, defence, basic_attack, moves, both_opponent_types}")
 
         # Calculate dmg based on type match up and defense
-        def calculate_damage(power_damage):
+        def calculate_damage(move_damage):
             meh = True
             level = 1
 
@@ -183,7 +183,7 @@ class PokemonSimulationOne():
             type_advantage_multiplier = type_advantage[attacker_type].get(defender_type, 1)
 
             if meh:
-                output = ((((2*level/5) + 2) * power_damage * (basic_attack / opponent_defence)) / 50) * type_advantage_multiplier
+                output = (((((2*level/5) + 2) * move_damage * (basic_attack / opponent_defence)) / 50) + 2) * type_advantage_multiplier
                 #print(f"Output: {output}")
                 return int(output)
             else:
