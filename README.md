@@ -36,7 +36,7 @@ Uses the command line argument in the console to run simulations.
 | **Method/function                          | **Primary author** | **Techniques demonstrated**   |
 | ------------------------------------------ | ------------------ | ----------------------------- |
 | All functions in `pokemon_info_grabber.py` | Jay Walter         | List comprehensions           |
-| print_result                               | Jay Walter         | Use of `lmabda` in `sorted()` |
+| print_result                               | Jay Walter         | Use of `lambda` in `sorted()` |
 |                                            | Wuilmer Palacios   |                               |
 |                                            | Ismail Touray      |                               |
 | battle_against_all                         | Griffin Biddle     | with statements, json.load    |
