@@ -1,3 +1,9 @@
+""" Two different Pokemon simulation to determine their effectiveness against other Pokemons
+
+Attributes:
+    LETTER_TO_NUMBER (dict): a dictionary contains all Pokemon types (keys) from second generation and their effectiveness
+    value against certain types (value).
+"""
 import json
 import random
 import sys
@@ -5,14 +11,7 @@ from argparse import ArgumentParser
 
 from pokemon_info_grabber import get_pokemon_info, johto_pokemons_and_types
 
-'''print("Jay was here ☺")
-print("Ismail says hi")
-print("Griffin says hey")
-print("Wuilmer was here.")
-print("John is late, but here")'''
-
-
-type_advantage = {  # Type advantages
+TYPE_ADVANTAGES = {
     "fire": {"fire": 0.5, "water": 0.5, "grass": 2, "ice": 2, "bug": 2, "rock": 0.5, "dragon": 0.5, "steel": 2},
     "water": {"fire": 2, "water": 0.5, "grass": 0.5, "ground": 2, "rock": 2, "dragon": 0.5},
     "grass": {"fire": 0.5, "water": 2, "grass": 0.5, "poison": 0.5, "ground": 2, "flying": 0.5, "bug": 0.5,
@@ -37,15 +36,41 @@ type_advantage = {  # Type advantages
 }
 
 class PokemonSimulationOne():
+    """ First simulation (parent class) that uses turn-based mechanics to simulate each battle
+
+    Attributes:
+        selected_pokemon_name (str): The name of the Pokemon selected by the user to be used in the simulation against
+        other Pokemons
+        num_opponents (int): The number of unique Pokemons will be used to fight against the selected Pokemon
+        num_simulations (int): The number of time(s) each battle will simulate
+    """
     def __init__(self, selected_pokemon, num_opponents, num_simulations):
+        """ Initialize the PokemonSimulationOne Class
+
+        Args:
+            selected_pokemon (str): The name of the Pokemon will be used in the simulation against others
+            num_opponents (int): The number of Pokemons will be used to battle the selected Pokemon
+            num_simulations (int): The number of battles for each will occur
+
+        Side effects:
+            • Converting the selected_pokemon_name attribute to all lowercase string
+            • Assigning attributes (selected_pokemon_name, num_opponents, num_simulations)
+        """
         self.selected_pokemon_name = selected_pokemon.lower()
         self.num_opponents = num_opponents
         self.num_simulations = num_simulations
 
     def get_info(self):
+        """ Gather and return Pokemon information needed for the simulation
+
+        Returns:
+            Pokemon information that will be used for the simulation.
+            all_pokemon_list (list): A list of all Pokemon found the PokeAPI for generation two
+            all_pokemon_types_list (list): All Pokemon types found in PokeAPI for generation two
+            selected_pokemons_data_dict (dict): A dictionary about the selected pokemon (key) and its information gathered
+        """
         get_johto_pokemons_and_types_instance = johto_pokemons_and_types
         all_pokemon_list, all_pokemon_types_list = get_johto_pokemons_and_types_instance()
-
         get_pokemon_info_instance = get_pokemon_info
         selected_pokemons_data_dict, opponent_pokemon_names_data_dict = get_pokemon_info_instance(self.selected_pokemon_name, self.num_opponents, all_pokemon_list)
         return all_pokemon_list, all_pokemon_types_list, selected_pokemons_data_dict, opponent_pokemon_names_data_dict
@@ -180,7 +205,7 @@ class PokemonSimulationOne():
             defender_type = both_opponent_types[0] if pokemon_name != self.selected_pokemon_name else both_opponent_types[1]
             defender_type = next(iter(defender_type))
 
-            type_advantage_multiplier = type_advantage[attacker_type].get(defender_type, 1)
+            type_advantage_multiplier = TYPE_ADVANTAGES[attacker_type].get(defender_type, 1)
 
             if meh:
                 output = (((((2*level/5) + 2) * move_damage * (basic_attack / opponent_defence)) / 50) + 2) * type_advantage_multiplier
@@ -198,6 +223,18 @@ class PokemonSimulationOne():
 
 
     def print_result(self):
+        """ Print information when somthing goes wrong when test simulation and store the final result in a text file
+
+        Returns:
+            Returns nothing and exit method if user provides invalid argument in the terminal when starting the simulation
+
+        Side effects:
+            • Print information to console when an invalid argument is entered
+            • Create a result.txt if do not exist. Update the file in result of each simulation once completed (erase previous simulations)
+            • Update attribute num_opponents to a value that's dividable by 18 if not initially.
+            • Create a instance of the child class (PokemonSimulationTwo) to run the second simulation
+        """
+
         if int(self.num_opponents) < 54 or int(self.num_opponents) > 251:
             print(f"{"-------" * 10}\n"
                   "Pick a number of Pokemon used in battle between 54-251\n"
@@ -270,7 +307,11 @@ class PokemonSimulationOne():
 
 
 class PokemonSimulationTwo(PokemonSimulationOne):
+    """ The child class of PokemonSimulationOne, used to simulate the second simulation but using Monte-carlo simulation
 
+    Attributes:
+        Same attributes shared from PokemonSimulationOne class
+    """
     def combined_distrubution_simulation(self, opponent_pokemon_name, pokedex_data):
         def probability_calculation(selected_data, opponent_data):
             hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
@@ -323,10 +364,34 @@ class PokemonSimulationTwo(PokemonSimulationOne):
 
 # Other Functions
 def main(selected_pokemon, num_opponents, num_simulations):
+    """ Main functon that create an instance of PokemonSimulationOne class to initialize
+
+    Args:
+        selected_pokemon (str): Name of the selected Pokemon that will be used to battle against other Pokemons
+        num_opponents (int): Number of different opponent the selected Pokemon will have to face
+        num_simulations (int): Number of time each battle will simulate
+    """
     pokemon_sim_1_instance = PokemonSimulationOne(selected_pokemon, num_opponents, num_simulations)
     pokemon_sim_1_instance.print_result()
 
 def parse_args(arglist):
+    """ Parse command line arguments.
+
+    Requires two arguments and one optional:
+        selected_pokemon (str): Required name of the Pokemon the user wants to use in both of the simulations to find its effectiveness
+        against others
+
+        number_opponents (int): Required number of opponents the user wishes to be used in the simulation
+
+        --simulations or -s (int): An optional number of simulations the user wishes each battle will occur.
+        The default value will be 50 if left ignored
+
+    Args:
+        arglist (list of str): command-line arguments
+
+    Returns:
+        namespace: an object with one attribute, file, containing a string.
+    """
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
     parser.add_argument("number_opponents", type=int, help="The number of unique Pokemons to simulate")
@@ -341,7 +406,6 @@ if __name__ == "__main__":
     # Example in the console ↓ (windows):
     # python .\main.py "pikachu" 54
     # python .\main.py "Typhlosion" 54 -s 100
-
 
     # https://www.thegamer.com/pokemon-gold-silver-strongest-generation-2-ii-stats/
     # https://www.thegamer.com/weakest-johto-pokemon-ranked/

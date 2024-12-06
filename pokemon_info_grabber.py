@@ -2,7 +2,6 @@ import json
 import requests
 import random
 
-
 def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
     try:
         with open("pokedex.json", "r", encoding="utf-8") as read_file:
