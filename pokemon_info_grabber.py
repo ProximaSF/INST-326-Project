@@ -3,6 +3,22 @@ import requests
 import random
 
 def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
+    """ Get required Pokemon attributes required for the simulation from the PokeAPI
+
+    Args:
+        selected_pokemon (str): The name of the primary Pokemon that will be used in both simulations
+        num_pokemon (int): Number of different Pokemons that will be used both of the simulation to fight against the selected
+        johto_pokemons (list): A list of all Pokemon from second generation (Johto region) based on the API
+
+    Returns:
+        Return two dictionaries: one is information gathered for the selected pokemon.
+        The second is a nested dictionaries of all other Pokemon details that will be used in the simulations
+
+    Side Effects:
+        • Create a json file if it does not exist.
+        • Edit the json when new Pokemon is added
+        • Print messages related to json status
+    """
     try:
         with open("pokedex.json", "r", encoding="utf-8") as read_file:
             pokedex_data = json.load(read_file)
@@ -12,6 +28,14 @@ def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
     print("Please wait, gathering data...")
 
     def get_store_pokemon(pokemon_name):
+        """ Store newly found Pokemon in the json file if does not exist so it reduce API calls in the future
+
+        Args:
+            pokemon_name (str): The name of the Pokemon being used to gather the information
+
+        Returns:
+            A dictionary of all the attributes (hp, types, ...) found for the Pokemon
+        """
         if not pokedex_data.get(pokemon_name):
             url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name.lower()}"
             response = requests.get(url)
@@ -44,7 +68,16 @@ def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
     return selected_pokedex_data, other_pokemons_data
 
 def add_moves(moves_list):
-    # print(moves_list)
+    """ Gather only moves a Pokemon have that have a power/damage (greater than 0) and is from second-generation
+
+    Args:
+        A list of all the move a Pokemon
+
+    Returns:
+        A list of moves where each item is a dictionary of the move that deals power/damage. If none found,
+        return an empty list
+    """
+    #print(moves_list)
     valid_moves_list = []
     for move_data in moves_list:  # move_data is a dictionary
         if len(valid_moves_list) != 4:
@@ -66,6 +99,12 @@ def add_moves(moves_list):
 
 
 def johto_pokemons_and_types():
+    """ Gather some information related to the Johto region; like the types of Pokemon and all the Pokemon from the region
+
+    Returns:
+        A list of all Pokemon from Johto region (second generation) and a list of all the different types from the region
+        except "unknown" and "stellar"
+    """
     pokemon_list = []
     pokemon_types_list = []
     pokemon_urls = ["https://pokeapi.co/api/v2/pokedex/3/", "https://pokeapi.co/api/v2/type/"]

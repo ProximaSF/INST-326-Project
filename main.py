@@ -307,7 +307,7 @@ class PokemonSimulationOne():
 
 
 class PokemonSimulationTwo(PokemonSimulationOne):
-    """ The child class of PokemonSimulationOne, used to simulate the second simulation but using Monte-carlo simulation
+    """ The child class of PokemonSimulationOne, used to simulate the second simulation by using Monte-carlo simulation
 
     Attributes:
         Same attributes shared from PokemonSimulationOne class
