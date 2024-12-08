@@ -43,6 +43,8 @@ class PokemonSimulationOne():
         other Pokemons
         num_opponents (int): The number of unique Pokemons will be used to fight against the selected Pokemon
         num_simulations (int): The number of time(s) each battle will simulate
+
+    Author: Jay Walter
     """
     def __init__(self, selected_pokemon, num_opponents, num_simulations):
         """ Initialize the PokemonSimulationOne Class
@@ -55,6 +57,8 @@ class PokemonSimulationOne():
         Side effects:
             • Converting the selected_pokemon_name attribute to all lowercase string
             • Assigning attributes (selected_pokemon_name, num_opponents, num_simulations)
+
+        Author: Jay Walter
         """
         self.selected_pokemon_name = selected_pokemon.lower()
         self.num_opponents = num_opponents
@@ -68,6 +72,8 @@ class PokemonSimulationOne():
             all_pokemon_list (list): A list of all Pokemon found the PokeAPI for generation two
             all_pokemon_types_list (list): All Pokemon types found in PokeAPI for generation two
             selected_pokemons_data_dict (dict): A dictionary about the selected pokemon (key) and its information gathered
+
+        Author: Jay Walter
         """
         get_johto_pokemons_and_types_instance = johto_pokemons_and_types
         all_pokemon_list, all_pokemon_types_list = get_johto_pokemons_and_types_instance()
@@ -76,6 +82,24 @@ class PokemonSimulationOne():
         return all_pokemon_list, all_pokemon_types_list, selected_pokemons_data_dict, opponent_pokemon_names_data_dict
 
     def battle_simulation(self, opponent_pokemon_name):
+        """ Simulate multiples battles between a chosen pokemon and opponent pokemon
+
+        Args: 
+            opponent_pokemon_name (str): Opponent pokemons name
+
+        Returns:
+            tuple: A tuple that contains:
+                • selected_wins (int): The number of wins earned by the chosen pokemon
+                • opponent_wins (int): The number of wins earned by the opponent pokemon
+                • win_rate (float): The win rate of the chosen pokemon across the simulations
+       
+        Side effects:
+            • Opens and reads the pokedex.json file
+            • Prints error messages if pokemon data is missing
+        Author: Griffin Biddle
+
+        Techniques: f-strings
+        """
         with open("pokedex.json", 'r', encoding='utf-8') as file:
             pokedex_data = json.load(file)
 
@@ -124,7 +148,7 @@ class PokemonSimulationOne():
             while selected_pokemon_hp > 0 and opponent_pokemon_name_hp > 0:
 
                 pokemon_name = self.selected_pokemon_name
-                # Selected Pokémon attacks first
+                # Selected pokemon attacks first
                 damage_inflict = self.damage(pokemon_name, selected_DBM_stats, opponent_defense, both_opponent_types)
                 opponent_pokemon_name_hp -= damage_inflict
                 if opponent_pokemon_name_hp <= 0:
@@ -132,7 +156,7 @@ class PokemonSimulationOne():
                     break
 
                 pokemon_name = opponent_pokemon_name
-                # Opponent Pokémon attacks
+                # Opponent pokemon attacks
                 damage_inflict = self.damage(pokemon_name, opponent_DBM_stats, selected_defense, both_opponent_types)
                 selected_pokemon_hp -= damage_inflict
                 if selected_pokemon_hp <= 0:
@@ -145,6 +169,30 @@ class PokemonSimulationOne():
 
     # Tracks results against several pokemon
     def battle_against_all(self, all_opponents):
+        """ Simulates battles between the chosen pokemon and a wide range of other pokemon. Gives results of the battle and success/failures
+
+        Args:
+            all_opponents (dict): A dictionary containing the opponent pokemon names and all of their stats
+            
+        Returns:
+            tuple: A tuple containing:
+                • battle_results (list of dicts): Listed results for each battle. Each list of results has the following:
+                    - opponent (str): The name of the opponent
+                    - selected_wins (int): The number of wins earned by the chosen pokemon
+                    - opponent_wins (int): The number of wins earned by the opponent pokemon
+                    - win_rate (float): The win rate of the chosen pokemon across the simulations
+                • mean_win_rate (float): The overall win rate of the chosen pokemon across all simulations
+                • types_score (dict): A dictionary that showcases which types had the most and/or lease effect against the chosen
+                  pokemon. For this, keys are pokemon types and values are the count for times the selected pokemon lost to said type
+
+        Side effects:
+            • Calls on battle_simulation for each opponent in list
+            • Updates the types_score dictionary based on battle outcomes
+
+        Author: Griffin Biddle
+
+        Techniques: with statements, json.load
+        """
         types_score = {}
         win_count = 0
         total_battles = 0
@@ -233,6 +281,10 @@ class PokemonSimulationOne():
             • Create a result.txt if do not exist. Update the file in result of each simulation once completed (erase previous simulations)
             • Update attribute num_opponents to a value that's dividable by 18 if not initially.
             • Create a instance of the child class (PokemonSimulationTwo) to run the second simulation
+
+        Author: Jay Walter
+
+        Techniques: Use of lambda in sorted()
         """
 
         if int(self.num_opponents) < 54 or int(self.num_opponents) > 251:
@@ -311,6 +363,8 @@ class PokemonSimulationTwo(PokemonSimulationOne):
 
     Attributes:
         Same attributes shared from PokemonSimulationOne class
+
+    Author: Ismail Touray
     """
     def combined_distrubution_simulation(self, opponent_pokemon_name, pokedex_data):
         def probability_calculation(selected_data, opponent_data):
@@ -391,6 +445,10 @@ def parse_args(arglist):
 
     Returns:
         namespace: an object with one attribute, file, containing a string.
+
+    Author: Jay Walter
+
+    Technqiues: argparse
     """
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
