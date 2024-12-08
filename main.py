@@ -96,6 +96,7 @@ class PokemonSimulationOne():
         Side effects:
             • Opens and reads the pokedex.json file
             • Prints error messages if pokemon data is missing
+        
         Author: Griffin Biddle
 
         Techniques: f-strings
