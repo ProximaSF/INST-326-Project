@@ -44,7 +44,7 @@ class PokemonSimulationOne():
         num_opponents (int): The number of unique Pokemons will be used to fight against the selected Pokemon
         num_simulations (int): The number of time(s) each battle will simulate
 
-    Author: Jay Walter
+    Author: Jay Walter, Griffin Biddle & Ismail Touray
     """
     def __init__(self, selected_pokemon, num_opponents, num_simulations):
         """ Initialize the PokemonSimulationOne Class
