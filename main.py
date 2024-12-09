@@ -236,6 +236,31 @@ class PokemonSimulationOne():
         return battle_results, mean_win_rate, types_score
 
     def damage(self, pokemon_name, DBM_stats, opponent_defence, both_opponent_types):
+        """
+        Calculates the damage dealt by a Pokémon to its opponent during a battle.
+
+        Args:
+        pokemon_name (str): The name of the Pokémon performing the attack.
+        DBM_stats (tuple): A tuple containing the Pokémon's defense, basic attack, and moves.
+            - Index 0: Defense (int)
+            - Index 1: Basic attack (int)
+            - Index 2: Moves (list of dicts, each representing a move and its damage)
+        opponent_defence (int): The defense stat of the opponent Pokémon.
+        both_opponent_types (tuple): A tuple containing the type(s) of both the attacking and defending Pokémon.
+            - Index 0: Type(s) of the selected Pokémon (list or set)
+            - Index 1: Type(s) of the opponent Pokémon (list or set)
+
+        Returns:
+        int: The calculated damage inflicted on the opponent Pokémon.
+
+        Side Effects:
+        - Randomly selects a move from the Pokémon's moveset if available.
+        - Falls back to using the basic attack if no moves are available.
+
+        Techniques:
+        - Type advantage calculation using the `TYPE_ADVANTAGES` dictionary.
+        - Random move selection for dynamic battle simulation.
+        """
         basic_attack = DBM_stats[1]
         moves = DBM_stats[2]
 
@@ -243,6 +268,16 @@ class PokemonSimulationOne():
 
         # Calculate dmg based on type match up and defense
         def calculate_damage(move_damage):
+            """
+            Calculates the actual damage inflicted by an individual move, accounting for type advantages and stats.
+
+            Args:
+            move_damage (int): The base damage of the selected move.
+
+            Returns:
+            int: The calculated damage output based on the Pokémon's stats, move power, and type effectiveness.
+            """
+            
             meh = True
             level = 1
             attacker_type = both_opponent_types[0] if pokemon_name == self.selected_pokemon_name else both_opponent_types[1]
