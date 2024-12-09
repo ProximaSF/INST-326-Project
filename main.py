@@ -237,24 +237,24 @@ class PokemonSimulationOne():
 
     def damage(self, pokemon_name, DBM_stats, opponent_defence, both_opponent_types):
         """
-        Calculates the damage dealt by a Pokémon to its opponent during a battle.
+        Calculates the damage dealt by a Pokemon to its opponent during a battle.
 
         Args:
-        pokemon_name (str): The name of the Pokémon performing the attack.
-        DBM_stats (tuple): A tuple containing the Pokémon's defense, basic attack, and moves.
+        pokemon_name (str): The name of the Pokemon performing the attack.
+        DBM_stats (tuple): A tuple containing the Pokemon's defense, basic attack, and moves.
             - Index 0: Defense (int)
             - Index 1: Basic attack (int)
             - Index 2: Moves (list of dicts, each representing a move and its damage)
-        opponent_defence (int): The defense stat of the opponent Pokémon.
-        both_opponent_types (tuple): A tuple containing the type(s) of both the attacking and defending Pokémon.
-            - Index 0: Type(s) of the selected Pokémon (list or set)
-            - Index 1: Type(s) of the opponent Pokémon (list or set)
+        opponent_defence (int): The defense stat of the opponent Pokemon.
+        both_opponent_types (tuple): A tuple containing the type(s) of both the attacking and defending Pokemon.
+            - Index 0: Type(s) of the selected Pokemon (list or set)
+            - Index 1: Type(s) of the opponent Pokemon (list or set)
 
         Returns:
-        int: The calculated damage inflicted on the opponent Pokémon.
+        int: The calculated damage inflicted on the opponent Pokemon.
 
         Side Effects:
-        - Randomly selects a move from the Pokémon's moveset if available.
+        - Randomly selects a move from the Pokemon's moveset if available.
         - Falls back to using the basic attack if no moves are available.
 
         Techniques:
@@ -275,7 +275,7 @@ class PokemonSimulationOne():
             move_damage (int): The base damage of the selected move.
 
             Returns:
-            int: The calculated damage output based on the Pokémon's stats, move power, and type effectiveness.
+            int: The calculated damage output based on the Pokemon's stats, move power, and type effectiveness.
             """
             
             meh = True
