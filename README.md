@@ -33,11 +33,10 @@ Uses the command line argument in the console to run simulations.
 
 ## Annotated Bibliography
 
-Hallett, P. (2014, December). Pokemon API. Pokéapi. https://pokeapi.co/ 
-
+1. Hallett, P. (2014, December). Pokemon API. Pokéapi. https://pokeapi.co/ 
 **Explanation:** Massive datafile that contains pokemon data that we used for our simulations. Data includes, but is not limited to, hp, defense, attacks, types, and more. 
 
-Wikipedia. (2024, December 6). Gameplay of pokémon. https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#:~:text=Pok%C3%A9mon%20uses%20a%20turn%2Dbased,is%20automatically%20sent%20into%20battle.
+2. Wikipedia. (2024, December 6). Gameplay of pokémon. https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#:~:text=Pok%C3%A9mon%20uses%20a%20turn%2Dbased,is%20automatically%20sent%20into%20battle.
 
 **Explanation:** This doesn't factor into the actual code, its just how the Pokemon game is played, and something worth noting. Some of our team members weren't familiar with how the game was played, so we referred to this for an exact explanation.
 
