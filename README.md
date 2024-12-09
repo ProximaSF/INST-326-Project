@@ -5,31 +5,43 @@ Two simulations to determine the mean win rate of the specific Pokemon against o
 ## File Purposes
 
 1. `main.py`:
-   - The main script that will execute the Pokemon simulations. 
+   
+   - The main script to execute Pokemon simulations. 
+   
 2. `pokemon_info_getter.py`
-   - Script contain 3 functions, 2 used in `main.py` to grab all the necessary Pokemon information (hp, defense, attacks, etc) [PokeAPI](https://pokeapi.co/) to run each simulation.
+   
+   - Script contain 3 functions, 2 used in `main.py` to grab all the necessary Pokemon information (hp, defense, attacks, etc) from [PokeAPI](https://pokeapi.co/) to run each simulation.
+   
 3. `pokedex.json`
-   - `json `file where all Pokemon status is stored after grabbed from PokeAPI. Used to reduce API calls to make initial simulation run faster. 
+   
+   - `json `file where all Pokemon status is stored after grabbed new data from PokeAPI to reduce API calls and run code faster.
+   
 4. `README.md`
-   - Markdown file on instruction how to use the script and run the simulation in the console. It also contain other information's relate to the project.
+   
+   - Markdown file containing information related to the project from instructions, file purpose, attribution and etc.
+   
+     
 
 ## Instructions
 
 Uses the command line argument in the console to run simulations.
 
 - Requires two arguments: `selected_pokemon` & `number_opponents`
-  - `selected_pokemon`: the name of the Pokemon from generation 2 that will be used in both simulation
+  - `selected_pokemon`: the name of the Pokemon from generation 2 to be used in both simulation
   - `number_opponents`: a number (integer) of other Pokemons that will be used to battle against the selected Pokemon. 
-    - Value must be `>= 54` or `<= 251` because there are 251 Pokemon provided for 2nd gen in the API and 54 is the minimum to run the simulation with adequate sample size. 
+    - Value must be `>= 54` or `<= 251`: Will be rounded to a value that's divisible by 18
 - One optional argument: `simulations`
   - `simulations`: a number (integer) of times each battle will occur. The default value is 50 and there is no limit. 
   - Flags are `-s` or `--simulations`
-- Example inputs:
-  -  `python main.py "Pikachu" 100`
-  -  `python main.py "Charmander" 54 -s 10`
-  -  `python main.py "magikarp" 54 --simulations 10`
+- In the terminal, type `main.py` as the first argument, than the name of a Pokemon (`Pikachu`) you want to use and than the number of Pokemons you want to use to fight against the first Pokemon you picked.
+  - To set a simulation limit occurrence for each battle, than type `-s` or `-simulations` follow by a number
+  - <u>Example inputs for WindowOS:</u>
+    - `python main.py "Pikachu" 100`
+    - `python main.py "Charmander" 54 -s 10`
+    - `python main.py "magikarp" 54 --simulations 10`
 
-## Output
+
+## Output/ Interpretation
 
 ## Annotated Bibliography
 
