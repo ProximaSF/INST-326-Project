@@ -391,6 +391,12 @@ class PokemonSimulationTwo(PokemonSimulationOne):
 
 
     def advantage_probability(self, opponent_pokemon_name, type_advantage):
+        """Determines the advantage probability based on the stats and types of the battling pokemon
+        
+        Args:
+            opponent_pokemon_name (str): the name of the pokemon being battled
+            type_advantage (dict): dictionary containing type advantages
+        """
         # Type Advantage
         total_multiplier = 1.0
         selected_types = self.selected_pokemon_name['types']

@@ -51,7 +51,7 @@ Uses the command line argument in the console to run simulations.
 | `calculate_damage`                         | Ismail Touray      | Dictionary lookup & keyword arguments |
 | `battle_against_all`                       | Griffin Biddle     | with statements, json.load            |
 | `battle_simulation`                        | Griffin Biddle     | f-strings with expressions            |
-|                                            | John Downes        |                                       |
+| `advantage_probability`                    | John Downes        | conditional expressions               |
 |                                            | Wuilmer Palacios   |                                       |
 
 ## Concepts:
