@@ -38,7 +38,7 @@ Uses the command line argument in the console to run simulations.
 | All functions in `pokemon_info_grabber.py` | Jay Walter         | List comprehensions           |
 | print_result                               | Jay Walter         | Use of `lambda` in `sorted()` |
 |                                            | Wuilmer Palacios   |                               |
-|                                            | Ismail Touray      |                               |
+| calculate_damage                           | Ismail Touray      | Dictionary lookup with default values and random choice from a collection |
 | battle_against_all                         | Griffin Biddle     | with statements, json.load    |
 | battle_simulation                          | Griffin Biddle     | f-strings with expressions    |
 |                                            | John Downes        |                               |
