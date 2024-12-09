@@ -18,6 +18,8 @@ def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
         • Create a json file if it does not exist.
         • Edit the json when new Pokemon is added
         • Print messages related to json status
+
+    Author: Jay Walter
     """
     try:
         with open("pokedex.json", "r", encoding="utf-8") as read_file:
@@ -35,6 +37,8 @@ def get_pokemon_info(selected_pokemon, num_pokemon, johto_pokemons):
 
         Returns:
             A dictionary of all the attributes (hp, types, ...) found for the Pokemon
+
+        Author: Jay Walter
         """
         if not pokedex_data.get(pokemon_name):
             url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name.lower()}"
@@ -76,6 +80,8 @@ def add_moves(moves_list):
     Returns:
         A list of moves where each item is a dictionary of the move that deals power/damage. If none found,
         return an empty list
+
+    Author: Jay Walter
     """
     #print(moves_list)
     valid_moves_list = []
@@ -104,6 +110,8 @@ def johto_pokemons_and_types():
     Returns:
         A list of all Pokemon from Johto region (second generation) and a list of all the different types from the region
         except "unknown" and "stellar"
+
+    Author: Jay Walter
     """
     pokemon_list = []
     pokemon_types_list = []

@@ -427,6 +427,8 @@ def main(selected_pokemon, num_opponents, num_simulations):
         selected_pokemon (str): Name of the selected Pokemon that will be used to battle against other Pokemons
         num_opponents (int): Number of different opponent the selected Pokemon will have to face
         num_simulations (int): Number of time each battle will simulate
+
+    Author: Jay Walter
     """
     pokemon_sim_1_instance = PokemonSimulationOne(selected_pokemon, num_opponents, num_simulations)
     pokemon_sim_1_instance.print_result()
@@ -450,6 +452,7 @@ def parse_args(arglist):
         namespace: an object with one attribute, file, containing a string.
 
     Author: Jay Walter
+    Techniques: ArgumentParser class
     """
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
