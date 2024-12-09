@@ -33,23 +33,24 @@ Uses the command line argument in the console to run simulations.
 
 ## Attribution
 
-| **Method/function                          | **Primary author** | **Techniques demonstrated**   |
-| ------------------------------------------ | ------------------ | ----------------------------- |
-| All functions in `pokemon_info_grabber.py` | Jay Walter         | List comprehensions           |
-| print_result                               | Jay Walter         | Use of `lambda` in `sorted()` |
-|                                            | Wuilmer Palacios   |                               |
-| calculate_damage                           | Ismail Touray      | Dictionary lookup with default values and random choice from a collection |
-| battle_against_all                         | Griffin Biddle     | with statements, json.load    |
-| battle_simulation                          | Griffin Biddle     | f-strings with expressions    |
-|                                            | John Downes        |                               |
+| **Method/function                          | **Primary author** | **Techniques demonstrated**           |
+| ------------------------------------------ | ------------------ | ------------------------------------- |
+| All functions in `pokemon_info_grabber.py` | Jay Walter         |                                       |
+| `parse_args`                               | Jay Walter         | `ArgumentParser` class                |
+| `print_result`                             | Jay Walter         | Use of `lambda` in `sorted()`         |
+| `calculate_damage`                         | Ismail Touray      | Dictionary lookup & keyword arguments |
+| `battle_against_all`                       | Griffin Biddle     | with statements, json.load            |
+| `battle_simulation`                        | Griffin Biddle     | f-strings with expressions            |
+|                                            | John Downes        |                                       |
+|                                            | Wuilmer Palacios   |                                       |
 
 ## Concepts:
 
 - [ ] conditional expressions
-- [ ] optional parameters and/or keyword arguments
+- [x] optional parameters and/or keyword arguments
 - [x] f-strings containing expressions
 - [x] `with` statements
-- [ ] `ArgumentParser` class
+- [x] `ArgumentParser` class
 - [ ] Sequence unpacking
 - [ ] set operations (union, intersection, etc)
 - [x] Comprehensions or generator expressions

@@ -248,7 +248,6 @@ class PokemonSimulationOne():
         def calculate_damage(move_damage):
             meh = True
             level = 1
-
             attacker_type = both_opponent_types[0] if pokemon_name == self.selected_pokemon_name else both_opponent_types[1]
             attacker_type = next(iter(attacker_type))
             defender_type = both_opponent_types[0] if pokemon_name != self.selected_pokemon_name else both_opponent_types[1]
@@ -365,7 +364,7 @@ class PokemonSimulationTwo(PokemonSimulationOne):
     Attributes:
         Same attributes shared from PokemonSimulationOne class
 
-    Author: Ismail Touray
+    Authors: John Downes & Wuilmer Palacios
     """
     def combined_distrubution_simulation(self, opponent_pokemon_name, pokedex_data):
         def probability_calculation(selected_data, opponent_data):
@@ -448,8 +447,6 @@ def parse_args(arglist):
         namespace: an object with one attribute, file, containing a string.
 
     Author: Jay Walter
-
-    Technqiues: argparse
     """
     parser = ArgumentParser()
     parser.add_argument("selected_pokemon", help="The main Pokemon that will be simulated")
