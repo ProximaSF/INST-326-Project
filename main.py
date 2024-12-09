@@ -73,7 +73,7 @@ class PokemonSimulationOne():
             all_pokemon_types_list (list): All Pokemon types found in PokeAPI for generation two
             selected_pokemons_data_dict (dict): A dictionary about the selected pokemon (key) and its information gathered
 
-        Author: Jay Walter
+        Author: John Downes
         """
         get_johto_pokemons_and_types_instance = johto_pokemons_and_types
         all_pokemon_list, all_pokemon_types_list = get_johto_pokemons_and_types_instance()

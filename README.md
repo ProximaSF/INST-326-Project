@@ -35,33 +35,38 @@ Uses the command line argument in the console to run simulations.
 
 1. Hallett, P. (2014, December). Pokemon API. Pokéapi. https://pokeapi.co/ 
 
-**Explanation:** Massive datafile that contains pokemon data that we used for our simulations. Data includes, but is not limited to, hp, defense, attacks, types, and more. 
+   **Explanation:** Massive datafile that contains pokemon data that we used for our simulations. Data includes, but is not limited to, hp, defense, attacks, types, and more. 
 
-2. Wikipedia. (2024, December 6). Gameplay of pokémon. https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#:~:text=Pok%C3%A9mon%20uses%20a%20turn%2Dbased,is%20automatically%20sent%20into%20battle.
+2. Wikipedia. (2024, December 6). [Gameplay of pokémon](https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#:~:text=Pok%C3%A9mon%20uses%20a%20turn%2Dbased,is%20automatically%20sent%20into%20battle)
 
-**Explanation:** This doesn't factor into the actual code, its just how the Pokemon game is played, and something worth noting. Some of our team members weren't familiar with how the game was played, so we referred to this for an exact explanation.
+   **Explanation:** This doesn't factor into the actual code, its just how the Pokemon game is played, and something worth noting. Some of our team members weren't familiar with how the game was played, so we referred to this for an exact explanation.
+
+3. Bulbapedia. “Damage - Bulbapedia, the Community-driven Pokémon Encyclopedia.” *Bulbapedia*, 22 Nov. 2024, [bulbapedia.bulbagarden.net/wiki/Damage](https://bulbapedia.bulbagarden.net/wiki/Damage).
+
+   **Explanation:** Used the damage formula provided in Bulbapedia for first generation in the function `damage` to calculate the damage output of each Pokemon. Some variables like `STBD` & `random` was not included in the code but the structure is the same. 
 
 ## Attribution
 
-| **Method/function                          | **Primary author** | **Techniques demonstrated**           |
-| ------------------------------------------ | ------------------ | ------------------------------------- |
-| All functions in `pokemon_info_grabber.py` | Jay Walter         |                                       |
-| `parse_args`                               | Jay Walter         | `ArgumentParser` class                |
-| `print_result`                             | Jay Walter         | Use of `lambda` in `sorted()`         |
-| `calculate_damage`                         | Ismail Touray      | Dictionary lookup & keyword arguments |
-| `battle_against_all`                       | Griffin Biddle     | with statements, json.load            |
-| `battle_simulation`                        | Griffin Biddle     | f-strings with expressions            |
-| `advantage_probability`                    | John Downes        | conditional expressions               |
-|                                            | Wuilmer Palacios   |                                       |
+| **Method/function       | **Primary author** | **Techniques demonstrated**   |
+| ----------------------- | ------------------ | ----------------------------- |
+| `parse_args`            | Jay Walter         | `ArgumentParser` class        |
+| `print_result`          | Jay Walter         | Use of `lambda` in `sorted()` |
+| `damage`                | Ismail Touray      | keyword arguments             |
+| `calculate_damage`      | Ismail Touray      | Dictionary lookup             |
+| `battle_against_all`    | Griffin Biddle     | with statements, json.load    |
+| `battle_simulation`     | Griffin Biddle     | f-strings with expressions    |
+| `advantage_probability` | John Downes        | conditional expressions       |
+| `get_info`              | John Downes        | Sequence unpacking            |
+|                         | Wuilmer Palacios   |                               |
 
 ## Concepts:
 
-- [ ] conditional expressions
+- [x] conditional expressions
 - [x] optional parameters and/or keyword arguments
 - [x] f-strings containing expressions
 - [x] `with` statements
 - [x] `ArgumentParser` class
-- [ ] Sequence unpacking
+- [x] Sequence unpacking
 - [ ] set operations (union, intersection, etc)
 - [x] Comprehensions or generator expressions
 - using `lambda` with these functions
