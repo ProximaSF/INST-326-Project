@@ -43,8 +43,6 @@ class PokemonSimulationOne():
         other Pokemons
         num_opponents (int): The number of unique Pokemons will be used to fight against the selected Pokemon
         num_simulations (int): The number of time(s) each battle will simulate
-
-    Author: Jay Walter, Griffin Biddle & Ismail Touray
     """
     def __init__(self, selected_pokemon, num_opponents, num_simulations):
         """ Initialize the PokemonSimulationOne Class
@@ -74,6 +72,7 @@ class PokemonSimulationOne():
             selected_pokemons_data_dict (dict): A dictionary about the selected pokemon (key) and its information gathered
 
         Author: John Downes
+        Techniques: Sequence unpacking
         """
         get_johto_pokemons_and_types_instance = johto_pokemons_and_types
         all_pokemon_list, all_pokemon_types_list = get_johto_pokemons_and_types_instance()
@@ -98,7 +97,6 @@ class PokemonSimulationOne():
             • Prints error messages if pokemon data is missing
         
         Author: Griffin Biddle
-
         Techniques: f-strings
         """
         with open("pokedex.json", 'r', encoding='utf-8') as file:
@@ -191,7 +189,6 @@ class PokemonSimulationOne():
             • Updates the types_score dictionary based on battle outcomes
 
         Author: Griffin Biddle
-
         Techniques: with statements, json.load
         """
         types_score = {}
@@ -283,7 +280,6 @@ class PokemonSimulationOne():
             • Create a instance of the child class (PokemonSimulationTwo) to run the second simulation
 
         Author: Jay Walter
-
         Techniques: Use of lambda in sorted()
         """
 
@@ -363,8 +359,6 @@ class PokemonSimulationTwo(PokemonSimulationOne):
 
     Attributes:
         Same attributes shared from PokemonSimulationOne class
-
-    Authors: John Downes & Wuilmer Palacios
     """
     def combined_distrubution_simulation(self, opponent_pokemon_name, pokedex_data):
         def probability_calculation(selected_data, opponent_data):
@@ -396,6 +390,9 @@ class PokemonSimulationTwo(PokemonSimulationOne):
         Args:
             opponent_pokemon_name (str): the name of the pokemon being battled
             type_advantage (dict): dictionary containing type advantages
+
+        Author: John Downes
+        Techniques: conditional expressions
         """
         # Type Advantage
         total_multiplier = 1.0
