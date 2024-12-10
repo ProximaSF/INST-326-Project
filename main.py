@@ -355,7 +355,7 @@ class PokemonSimulationOne():
                 {**selected_pokemons_data_dict, **opponent_pokemon_data_dict})
             probability_results.append((opponent, win_probability))
 
-        summary = pokemon_sim_2_instance.summarize_win_probabilities(top_n=3)
+        summary = pokemon_sim_2_instance.summarize_win_probabilities(top_n=5)
         filtered_opponents = pokemon_sim_2_instance.filter_opponents_by_threshold(threshold=0.5)
         line_break = "↔↔↔↔↔↔" * 18
         msg = (f"Pokemon Types: \n{all_pokemon_types_list}\n\n"  # Unknown and stellar removed
@@ -393,7 +393,7 @@ class PokemonSimulationOne():
         msg += "Simulation 2 Additional Stats:\n"
         msg += f"Mean Win Probability: {round(summary['mean'], 2)}\n"
         msg += f"Standard Deviation: {round(summary['std_dev'], 2)}\n"
-        msg += f"Top 3 Opponents: {summary['top_opponents']}\n"
+        msg += f"Top 5 Opponents: {summary['top_opponents']}\n"
         msg += f"Opponents above 50% win rate: {filtered_opponents}\n"
         
         print(f"Number of Simulations: {self.num_simulations}")
