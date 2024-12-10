@@ -88,7 +88,8 @@ The output in the terminal after entering the arguments will first print "Please
 | `battle_simulation`                | Griffin Biddle     | f-strings with expressions    |
 | `advantage_probability`            | John Downes        | conditional expressions       |
 | `get_info`                         | John Downes        | Sequence unpacking            |
-| `combined_distrubution_simulation` | Wuilmer Palacios   |                               |
+| `combined_distrubution_simulation` | Wuilmer Palacios   | magic method, `super()`|
+| `summarize_win_probabilities`      | Wuilmer Palacios   | use of `lambda` in `list.sort()`        |
 
 ## Concepts:
 
@@ -101,14 +102,14 @@ The output in the terminal after entering the arguments will first print "Please
 - [ ] set operations (union, intersection, etc)
 - [x] Comprehensions or generator expressions
 - using `lambda` with these functions
-  - [ ] `list.sort()`
+  - [x] `list.sort()`
   - [x] ``sorted()`,
   - [ ]  `min()` or `max()`:
 
-- [ ] `super()` : method override
+- [x] `super()` : method override
 - [ ] composition of two custom classes
 - [x] `json.dumps()`, `json.loads()`, `json.dump()`, or `json.load()`
 - [ ] Use of `re`
-- [ ] magic methods beside`__init__()`
+- [x] magic methods beside`__init__()`
 - [ ] operations on `Pandas` 
 - [ ] Data visualization
