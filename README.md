@@ -52,6 +52,8 @@ After each simulation, the result of the simulation and related information will
 
 The main result of the simulations (battle results) will be at the very bottom of the file. It is structured as a dictionary where each key is the opponent Pokémon the selected Pokémon battled/simulated. The value contains a single tuple with two items; the first item (index 0) is the result of the first simulation, and the second item (index 1) is the result of the second simulation. The result is a percentage of the mean win rates based on the number of simulations specified (if specified, else 50).
 
+The function `summarize_win_probabilities` analyzes the previously recorded win probabilities against various opponents to provide a basic statistical overview. It calculates the mean and standard deviation of all stored win rates, helping to understand the overall performance distribution of the chosen Pokémon. By sorting the collected probabilities, it also identifies and returns the top n most favorable matchups, defaulting to five if not specified. If no data is available, it gracefully returns zeros and an empty list, ensuring a clean and safe response. The use of `list.sort()` and a `lambda` function streamlines sorting based on win rates, resulting in concise and efficient code.
+
 The output in the terminal after entering the arguments will first print "Please wait, gathering data...," telling the user to wait for the program. The wait time depends on how many API requests was needed to run the simulation. Once the simulation is completed, it will print other information like what Pokémon the user picked, the number of battle occurrences used in each battle, and a message saying the `result.txt` has been updated and created.
 
 ------
