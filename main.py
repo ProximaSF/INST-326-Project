@@ -436,7 +436,7 @@ class PokemonSimulationTwo(PokemonSimulationOne):
         
         Author: Wuilmer Palacios
         
-        Tecniques: super()
+        Techniques: super()
         """
         super().__init__(selected_pokemon_name, num_opponents, num_simulations)
         self.win_probabilities = []
