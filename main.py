@@ -260,6 +260,9 @@ class PokemonSimulationOne():
         Techniques:
         - Type advantage calculation using the `TYPE_ADVANTAGES` dictionary.
         - Random move selection for dynamic battle simulation.
+
+        Author: Ismail Touray
+        Technique: Keyword arguments
         """
         basic_attack = DBM_stats[1]
         moves = DBM_stats[2]
@@ -276,6 +279,9 @@ class PokemonSimulationOne():
 
             Returns:
             int: The calculated damage output based on the Pokemon's stats, move power, and type effectiveness.
+
+            Author: Ismail Touray
+            Technique: Dictionary Lookup
             """
             
             meh = True
