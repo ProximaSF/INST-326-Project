@@ -355,6 +355,8 @@ class PokemonSimulationOne():
                 {**selected_pokemons_data_dict, **opponent_pokemon_data_dict})
             probability_results.append((opponent, win_probability))
 
+        summary = pokemon_sim_2_instance.summarize_win_probabilities(top_n=3)
+        filtered_opponents = pokemon_sim_2_instance.filter_opponents_by_threshold(threshold=0.5)
         line_break = "↔↔↔↔↔↔" * 18
         msg = (f"Pokemon Types: \n{all_pokemon_types_list}\n\n"  # Unknown and stellar removed
                f"{line_break}\n"
@@ -387,7 +389,13 @@ class PokemonSimulationOne():
                 simulation1_pokemon] = f"({round(simulation1_win_rate * 100, 2)}%, {round(simulation2_win_rate * 100, 2)}%)"
             i += 1
         msg += str({pokemon_name: compare_result[pokemon_name] for pokemon_name in sorted(compare_result)})
-
+        msg += f"\n\n{line_break}\n"
+        msg += "Simulation 2 Additional Stats:\n"
+        msg += f"Mean Win Probability: {round(summary['mean'], 2)}\n"
+        msg += f"Standard Deviation: {round(summary['std_dev'], 2)}\n"
+        msg += f"Top 3 Opponents: {summary['top_opponents']}\n"
+        msg += f"Opponents above 50% win rate: {filtered_opponents}\n"
+        
         print(f"Number of Simulations: {self.num_simulations}")
         print(f"Running simulation for {self.selected_pokemon_name}")
         with open("result.txt", 'w', encoding="utf-8") as file:
@@ -396,33 +404,132 @@ class PokemonSimulationOne():
 
 
 class PokemonSimulationTwo(PokemonSimulationOne):
-    """ The child class of PokemonSimulationOne, used to simulate the second simulation by using Monte-carlo simulation
+    """A subclass of PokemonSimulationOne that implements a secondary simulation 
+    approach for calculating the likelihood that a chosen Pokemon will defeat various 
+    opponents. It preserves all the core battle mechanics from the parent class, while 
+    introducing methods to store, analyze, and filter win probabilities.
+    
+    Args:
+        selected_pokemon_name (str): The name of the Pokemon chosen for the simulation.
+        num_opponents (int): The number of unique opponents to simulate battles against.
+        num_simulations (int): The number of iterations to run for each battle scenario.
 
-    Attributes:
-        Same attributes shared from PokemonSimulationOne class
+    Returns:
+        None directly. Instances of this class store results internally in the 
+        win_probabilities attribute and provide methods to retrieve computed statistics.
+
+    Side effects:
+        - Relies on parent class methods that may print information to the console 
+        and write results to files.
+        - Maintains and updates an internal list win_probabilities that is modified 
+          after each simulation.
+        - Sorting and filtering operations affect the order and composition of 
+          win_probabilities, but do not produce global side effects.
+    
+    Author: Wuilmer Palacios
+    Techniques: magic methods
+    
     """
+    def __init__(self, selected_pokemon_name, num_opponents, num_simulations):
+        """
+        Initializes the simulation parameters and prepares an empty list for storing win probabilities.
+        
+        Author: Wuilmer Palacios
+        
+        Tecniques: super()
+        """
+        super().__init__(selected_pokemon_name, num_opponents, num_simulations)
+        self.win_probabilities = []
+
+    def __str__(self):
+        """
+        Returns a human-readable string representation of the simulation, including details about the selected Pokemon, number of opponents, and number of simulations.
+        """
+        return (f"PokemonSimulationTwo(selected_pokemon={self.selected_pokemon_name}, "
+                f"opponents={self.num_opponents}, simulations={self.num_simulations})")
+
     def combined_distrubution_simulation(self, opponent_pokemon_name, pokedex_data):
-        def probability_calculation(selected_data, opponent_data):
-            hp_prob = selected_data["hp"] / (selected_data["hp"] + opponent_data["hp"])
-            attack_prob = selected_data["basic_attack"] / (
-                        selected_data["basic_attack"] + opponent_data["basic_attack"])
-            defense_prob = selected_data["defense"] / (selected_data["defense"] + opponent_data["defense"])
+        """ Runs a single simulation against an opponent, computes the win rate, and adds 
+            it to win_probabilities. 
+            
+            Args:
+                opponent_pokemon_name (str): The name of the opponent Pokemon.
+                pokedex_data (dict): Data about the Pokemon, including stats and types.
 
-            combined_prob = (hp_prob + attack_prob + defense_prob) / 3
-            return combined_prob
+            Returns:
+                float: The win probability for the selected Pokemon against this opponent,
+                       or 0.0 if no result was computed.
 
-        selected_data = pokedex_data.get(self.selected_pokemon_name.lower())
-        opponent_data = pokedex_data.get(opponent_pokemon_name.lower())
-        if not selected_data or not opponent_data:
-            raise ValueError(f"Data missing for {selected_data} or {opponent_data}")
-        combined_prob = probability_calculation(selected_data, opponent_data)
-        win_count = 0
-        for _ in range(self.num_simulations):
-            if random.uniform(0, 1) < combined_prob:
-                win_count += 1
-        win_probability = win_count / self.num_simulations
-        # print(f"The probability for {selected_pokemon.upper()} against {opponent_pokemon_name.upper()} is :{win_probability}")
-        return win_probability
+            Side effects:
+                -Appends a tuple (opponent_pokemon_name, win_rate) to win_probabilities
+            
+            Author: Wuilmer Palacios
+            """
+        result = self.battle_simulation(opponent_pokemon_name)
+        if result is not None:
+            win_rate, _, _ = result
+            self.win_probabilities.append((opponent_pokemon_name, win_rate))
+            return win_rate
+        return 0.0
+
+    def sort_win_probabilities(self):
+        """
+        Sorts the win_probabilities list in descending order by win_rate.
+        """
+        self.win_probabilities.sort(key=lambda x: x[1], reverse=True)
+
+    def __len__(self):
+        """ 
+        Returns the number of recorded opponents for which win probabilities have been calculated.
+        """
+        return len(self.win_probabilities)
+
+    def summarize_win_probabilities(self, top_n=5):
+        """
+        Computes basic statistics from the collected win rates and identifies the top matchups which is default to 5
+            Args:
+                top_n (int, optional): The number of top opponents to return which defaults to 5.
+            Returns:
+                dict: A dictionary with keys "mean", "std_dev", and "top_opponents". If no data 
+                      is available, returns default zeros and an empty list.
+            Side effects:
+                None
+            
+            Author: Wuilmer Palacios
+            Techniques: use of lambda in list.sort()
+        """
+        
+        if not self.win_probabilities:
+            return {
+                "mean": 0.0,
+                "std_dev": 0.0,
+                "top_opponents": []
+            }
+        
+        rates = [wp[1] for wp in self.win_probabilities]
+        rates.sort()
+        
+        mean_val = sum(rates) / len(rates)
+
+        var = sum((r - mean_val)**2 for r in rates) / len(rates)
+        std_dev_val = var**0.5
+        
+        sorted_by_rate = self.win_probabilities[:]
+        sorted_by_rate.sort(key=lambda x: x[1], reverse=True)  # Using list.sort() here as well
+        top_opponents = sorted_by_rate[:top_n]
+
+
+        return {
+            "mean": mean_val,
+            "std_dev": std_dev_val,
+            "top_opponents": top_opponents
+        }
+
+    def filter_opponents_by_threshold(self, threshold):
+        """
+        Filters and returns a list of opponents whose win probabilities exceed the specified threshold.
+        """
+        return [opponent for opponent, rate in self.win_probabilities if rate > threshold]
 
 
     def advantage_probability(self, opponent_pokemon_name, type_advantage):
