@@ -1,4 +1,4 @@
-""" Two different Pokemon simulation to determine their effectiveness against other Pokemons
+z""" Two different Pokemon simulation to determine their effectiveness against other Pokemons
 
 Attributes:
     LETTER_TO_NUMBER (dict): a dictionary contains all Pokemon types (keys) from second generation and their effectiveness
